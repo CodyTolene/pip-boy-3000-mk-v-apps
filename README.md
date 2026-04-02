@@ -1,5 +1,5 @@
 <div align="center">
-  <img align="center" src=".github/images/logo.png" height="400" />
+  <img align="center" src=".github/images/repo-logo.png" height="400" />
   <h1 align="center">Pip-Boy Apps</h1>
   <p align="center">
     A community driven repository of custom applications and games for the 
