@@ -50,9 +50,10 @@ Welcome to the third iteration of the Pip-Boy 3000 Mk V Apps repository.
 
 This is a community driven collection of custom applications and games built for
 the Pip-Boy 3000 Mk V, the wearable device created by Bethesda and The Wand
-Company. 
+Company.
 
-The apps and games in this repository are provided on [pip-boy.com](https://pip-boy.com).
+The apps and games in this repository are provided on
+[pip-boy.com](https://pip-boy.com).
 
 <p align="right">[ <a href="#index">Index</a> ]</p>
 
@@ -62,8 +63,8 @@ The apps and games in this repository are provided on [pip-boy.com](https://pip-
 
 ## Iteration History <a name="iterations"></a>
 
-For historical purposes, previous repositories have been kept online so others 
-can reference them if needed. Check them out below if you're interested in the 
+For historical purposes, previous repositories have been kept online so others
+can reference them if needed. Check them out below if you're interested in the
 history of this project!
 
 ### First Iteration (March, 2025)
@@ -76,8 +77,9 @@ fork below.
 ### Second Iteration (June, 2025)
 
 A forked version of the official app-loader that grew way beyond its original
-scope. This version didn't show contributor names in GitHub and their hard work,
-which is one of the main reasons this repository was created from scratch.
+scope (300+ commits). This version didn't show contributor names in GitHub and
+their hard work, which is one of the main reasons for this next, third
+iteration.
 
 - https://github.com/CodyTolene/pip-boy-apps
 
@@ -85,6 +87,7 @@ which is one of the main reasons this repository was created from scratch.
 
 This repository, with revamped structure and tooling to make it easier for
 contributors to add their apps and games to [pip-boy.com](https://pip-boy.com).
+This version shows contributor names in GitHub since it's not a fork.
 
 - https://github.com/CodyTolene/pip-boy-3000-mk-v-apps
 
@@ -96,7 +99,10 @@ contributors to add their apps and games to [pip-boy.com](https://pip-boy.com).
 
 ## Prerequisites <a name="prerequisites"></a>
 
-- [Node.js][link-node-js]
+- You'll need [Node.js][link-node-js] for running any scripts in the
+  `package.json` file.
+- An IDE for making changes to the codebase (e.g. [Visual Studio
+  Code][link-vs-code]).
 
 <p align="right">[ <a href="#index">Index</a> ]</p>
 
@@ -106,15 +112,14 @@ contributors to add their apps and games to [pip-boy.com](https://pip-boy.com).
 
 ## Create a New App or Game <a name="create-a-new-app-or-game"></a>
 
-To create a new app or game, add a new folder under the `src` directory with the
-following structure:
+To create a new app or game, add a new folder under the `apps` or `games` 
+directory with the following structure:
 
-```src/
-  src/your-app-name/
-    app.js
-    ChangeLog
-    metadata.json
-    README.md
+```sh
+app.js
+ChangeLog
+metadata.json
+README.md
 ```
 
 - `app.js`: The main JavaScript file for your app or game.
@@ -146,7 +151,7 @@ following structure:
     ```
 
 3.  Make your changes to the codebase, start with creating a new app or game
-    folder in the `src` directory, and add your app's source code and metadata.
+    folder in the `apps` or `games` directory, and add your app's source code and metadata.
 
     > ![info][img-info] See required files and metadata in the
     > [Create a new App or Game](#create-a-new-app-or-game) section below.
@@ -229,3 +234,4 @@ Cody Tolene
 [link-new-issue]:
   https://github.com/CodyTolene/pip-boy-3000-mk-v-apps/issues/new
 [link-node-js]: https://nodejs.org/en
+[link-vs-code]: https://code.visualstudio.com/
