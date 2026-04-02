@@ -1,6 +1,6 @@
 <div align="center">
   <img align="center" src=".github/images/repo-logo.png" height="400" />
-  <h1 align="center">Pip-Boy Apps</h1>
+  <h1 align="center">Pip-Boy 3000 Mk V Apps</h1>
   <p align="center">
     A community driven repository of custom applications and games for the 
     <a href="https://www.thewandcompany.com/fallout-pip-boy/" target="_blank">Pip-Boy 3000 Mk V</a>, 
