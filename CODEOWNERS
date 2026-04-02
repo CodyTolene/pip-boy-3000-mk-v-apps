@@ -1,29 +1,29 @@
 * @CodyTolene
 
-/apps/asteroid/       @rblakesley
-/apps/asteropips/     @killes007
-/apps/customalarm/    @rblakesley
-/apps/customimg/      @rblakesley
-/apps/custommap/      @rblakesley
-/apps/customradio/    @CodyTolene
-/apps/customtext/     @rblakesley
-/apps/diceroller/     @CodyTolene
-/apps/flappyroach/    @JLDenson
-/apps/fileexplorer/   @CodyTolene
-/apps/gameexample/    @CodyTolene
-/apps/idcard/         @rblakesley
-/apps/inventoryapp/   @AidansLab
-/apps/mtgtracker/     @tylerjbartlett
-/apps/pip2048/        @killes007
-/apps/pipboynotes/    @gnargle
-/apps/pipdoom/        @CodyTolene
-/apps/pippong/        @CodyTolene
-/apps/pipsnake/       @CodyTolene
-/apps/piptactoe/      @pip-4111
-/apps/piptris/        @CodyTolene
-/apps/piptube/        @CodyTolene
-/apps/pipuiplus/      @MercurialPony @CodyTolene @gnargle
-/apps/portahack/      @pip-4111 @CodyTolene
-/apps/settings        @rblakesley
-/apps/statsdisplay/   @gnargle
-/apps/vaultbreaker/   @TetrisKid48
+/src/asteroid/       @rblakesley
+/src/asteropips/     @killes007
+/src/customalarm/    @rblakesley
+/src/customimg/      @rblakesley
+/src/custommap/      @rblakesley
+/src/customradio/    @CodyTolene
+/src/customtext/     @rblakesley
+/src/diceroller/     @CodyTolene
+/src/fileexplorer/   @CodyTolene
+/src/flappyroach/    @JLDenson
+/src/gameexample/    @CodyTolene
+/src/idcard/         @rblakesley
+/src/inventoryapp/   @AidansLab
+/src/mtgtracker/     @tylerjbartlett
+/src/pip2048/        @killes007
+/src/pipboynotes/    @gnargle
+/src/pipdoom/        @CodyTolene
+/src/pippong/        @CodyTolene
+/src/pipsnake/       @CodyTolene
+/src/piptactoe/      @pip-4111
+/src/piptris/        @CodyTolene
+/src/piptube/        @CodyTolene
+/src/pipuiplus/      @MercurialPony @CodyTolene @gnargle
+/src/portahack/      @pip-4111 @CodyTolene
+/src/settings        @rblakesley
+/src/statsdisplay/   @gnargle
+/src/vaultbreaker/   @TetrisKid48

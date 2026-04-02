@@ -1,0 +1,14 @@
+{
+  "name": "pip-boy-3000-mk-v-apps",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "node --experimental-strip-types .scripts/build.ts",
+    "format": "prettier --write ."
+  },
+  "devDependencies": {
+    "@types/node": "^25.5.0",
+    "prettier": "^3.8.1"
+  }
+}
