@@ -1,6 +1,0 @@
-[submodule "EspruinoAppLoaderCore"]
-	path = core
-	url = https://github.com/espruino/EspruinoAppLoaderCore.git
-[submodule "EspruinoWebTools"]
-	path = webtools
-	url = https://github.com/espruino/EspruinoWebTools.git
