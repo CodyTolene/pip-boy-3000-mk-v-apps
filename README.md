@@ -31,12 +31,64 @@
 
 ## Index <a name="index"></a>
 
+- [Description](#description)
+- [Iteration History](#iterations)
 - [Prerequisites](#prerequisites)
 - [Create a New App or Game](#create-a-new-app-or-game)
 - [Contributing](#contributing)
 - [Scripts](#scripts)
 - [License](#license)
 - [Wrapping Up](#wrapping-up)
+
+<!---------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------->
+
+## Description <a name="description"></a>
+
+Welcome to the third iteration of the Pip-Boy 3000 Mk V Apps repository.
+
+This is a community driven collection of custom applications and games built for
+the Pip-Boy 3000 Mk V, the wearable device created by Bethesda and The Wand
+Company. Hosted on GitHub, this repository acts as a central hub for sharing
+apps/games, collaborating on new ideas, and contributing to
+[Pip-Boy.com](https://pip-boy.com).
+
+<p align="right">[ <a href="#index">Index</a> ]</p>
+
+<!---------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------->
+
+## Iteration History <a name="iterations"></a>
+
+For historical purposes, I’ve kept previous repositories online so others can
+reference them if needed. Check them out below if you're interested in the
+history of this project!
+
+### First Iteration (March, 2025)
+
+The custom apps repository before the release of the official app-loader and
+fork below.
+
+https://github.com/CodyTolene/pip-apps
+
+### Second Iteration (June, 2025)
+
+A forked version of the official app-loader that grew way beyond its original
+scope. This version didn't show contributor names in GitHub and their hard work,
+which is one of the main reasons this repository was created from scratch.
+
+https://github.com/CodyTolene/pip-boy-apps
+
+### Third Iteration (April, 2026 - Present)
+
+This repository, with revamped structure and tooling to make it easier for
+contributors to add their apps and games to [Pip-Boy.com](https://pip-boy.com).
+
+https://github.com/CodyTolene/pip-boy-3000-mk-v-apps
+
+<p align="right">[ <a href="#index">Index</a> ]</p>
 
 <!---------------------------------------------------------------------------->
 <!---------------------------------------------------------------------------->
@@ -128,9 +180,9 @@ following structure:
 npm run <script>
 ```
 
-| Script | Description |
-| --- | --- |
-| `build` | Builds the apps and games list. |
+| Script   | Description                          |
+| -------- | ------------------------------------ |
+| `build`  | Builds the apps and games list.      |
 | `format` | Formats the codebase using Prettier. |
 
 <p align="right">[ <a href="#index">Index</a> ]</p>
