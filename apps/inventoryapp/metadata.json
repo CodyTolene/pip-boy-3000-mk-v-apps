@@ -5,6 +5,7 @@
   "version": "1.5.2",
   "description": "The inventory app adds a customizable and interactable inventory. (MAKE SURE TO CLICK READ MORE...)",
   "icon": "invPatch.png",
+  "previews": [],
   "tags": "app,system",
   "type": "app",
   "readme": "README.md",

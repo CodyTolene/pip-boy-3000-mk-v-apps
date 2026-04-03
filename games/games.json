@@ -6,6 +6,9 @@
     "version": "0.03",
     "description": "An Asteroids Game",
     "icon": "asteroid/app.png",
+    "previews": [
+      "asteroid.mp4"
+    ],
     "tags": "game",
     "type": "app",
     "readme": "asteroid/README.md",
@@ -23,6 +26,9 @@
     "version": "1.0.2",
     "description": "AsteroPIPs is a simple game where you control a spaceship to shoot and avoid space rocks.",
     "icon": "asteropips/asteropips.png",
+    "previews": [
+      "asteropips.mp4"
+    ],
     "tags": "game",
     "type": "app",
     "readme": "asteropips/README.md",
@@ -40,6 +46,9 @@
     "version": "1.1.1",
     "description": "A Fallout inspired version of the popular Flappy Bird game.",
     "icon": "flappyroach/assets/flappyroach.png",
+    "previews": [
+      "flappyroach.mp4"
+    ],
     "tags": "game",
     "type": "app",
     "readme": "flappyroach/README.md",
@@ -81,6 +90,9 @@
     "version": "1.0.2",
     "description": "A game example that you can use as a template for your own game.",
     "icon": "gameexample/gameexample.png",
+    "previews": [
+      "gameexample.mp4"
+    ],
     "tags": "game,experiment",
     "type": "app",
     "readme": "gameexample/README.md",
@@ -98,6 +110,9 @@
     "version": "1.3.0",
     "description": "A DOOM inspired RPG engine for the Pip-Boy 3000 Mk V.",
     "icon": "pipdoom/assets/pipdoom.png",
+    "previews": [
+      "pipdoom.mp4"
+    ],
     "tags": "game",
     "type": "app",
     "readme": "pipdoom/README.md",
@@ -155,6 +170,9 @@
     "version": "1.2.1",
     "description": "Pip-Pong is a simple game where you control a paddle that hits a ball back and forth.",
     "icon": "pippong/pippong.png",
+    "previews": [
+      "pippong.mp4"
+    ],
     "tags": "game",
     "type": "app",
     "readme": "pippong/README.md",
@@ -172,6 +190,9 @@
     "version": "1.2.1",
     "description": "Guide your rad-snake to snacks while avoiding self-inflicted disaster. Good for low-risk simulation recommended by Vault-Tec for maintaining hand-eye coordination during extended shelter stays.",
     "icon": "pipsnake/pipsnake.png",
+    "previews": [
+      "pipsnake.mp4"
+    ],
     "tags": "game",
     "type": "app",
     "readme": "pipsnake/README.md",
@@ -189,6 +210,9 @@
     "version": "1.0.2",
     "description": "A classic 2048 game.",
     "icon": "pip2048/pip2048.png",
+    "previews": [
+      "pip2048.mp4"
+    ],
     "tags": "game",
     "type": "app",
     "readme": "pip2048/README.md",
@@ -206,6 +230,9 @@
     "version": "1.1.5",
     "description": "A fun Tic-Tac-Toe game for the Pip-Boy 3000 Mk V.",
     "icon": "piptactoe/piptactoe.png",
+    "previews": [
+      "piptactoe.mp4"
+    ],
     "tags": "game",
     "type": "app",
     "readme": "piptactoe/README.md",
@@ -223,6 +250,9 @@
     "version": "3.1.0",
     "description": "Stack, rotate, and clear falling blocks in this Tetris inspired mini-game. Simple, addictive, and perfect for idle moments between scavenging runs or stimpak breaks.",
     "icon": "piptris/assets/piptris.png",
+    "previews": [
+      "piptris.mp4"
+    ],
     "tags": "game",
     "type": "app",
     "readme": "piptris/README.md",
@@ -268,6 +298,9 @@
     "version": "1.2.0",
     "description": "A recreation of the in-game hacking sequence, played right from your wrist!",
     "icon": "portahack/assets/portahack.png",
+    "previews": [
+      "portahack.mp4"
+    ],
     "tags": "game",
     "type": "app",
     "readme": "portahack/README.md",
@@ -293,6 +326,7 @@
     "version": "1.0.2",
     "description": "A classic brick-breaking game.",
     "icon": "vaultbreaker/vaultbreaker.png",
+    "previews": [],
     "tags": "game",
     "type": "app",
     "readme": "vaultbreaker/README.md",

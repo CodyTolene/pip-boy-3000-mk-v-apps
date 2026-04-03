@@ -6,6 +6,7 @@
     "version": "3.3.3",
     "description": "Custom Radio lets you browse and play your own `.wav` music files directly from the `/RADIO` folder and nested directories (playlists), giving you full control over your playlist for wasteland adventures.",
     "icon": "customradio/assets/customradio.png",
+    "previews": [],
     "tags": "media,system",
     "type": "app",
     "readme": "customradio/README.md",
@@ -27,6 +28,9 @@
     "version": "1.2.1",
     "description": "Toss tabletop dice: D2, D4, D6, D8, D10, D12, D20, and D100. War never changes, but your roll might!",
     "icon": "diceroller/assets/diceroller.png",
+    "previews": [
+      "diceroller.mp4"
+    ],
     "tags": "game,tool",
     "type": "app",
     "readme": "diceroller/README.md",
@@ -60,6 +64,9 @@
     "version": "2.2.1",
     "description": "Seamlessly browse your system's directories and view pre-approved images, videos, and text files. Designed for clarity, built for the future, just the way Vault-Tec intended.",
     "icon": "fileexplorer/fileexplorer.png",
+    "previews": [
+      "fileexplorer.mp4"
+    ],
     "tags": "media,tool",
     "type": "app",
     "readme": "fileexplorer/README.md",
@@ -77,6 +84,7 @@
     "version": "1.5.2",
     "description": "The inventory app adds a customizable and interactable inventory. (MAKE SURE TO CLICK READ MORE...)",
     "icon": "inventoryapp/invPatch.png",
+    "previews": [],
     "tags": "app,system",
     "type": "app",
     "readme": "inventoryapp/README.md",
@@ -178,6 +186,9 @@
     "version": "1.0.1",
     "description": "A Pip-powered life counter for Magic the Gathering with standard 20 life games and 40/21 life Commander games for 1-4 players. 1-2 players recommended.",
     "icon": "mtgtracker/mtgtracker.png",
+    "previews": [
+      "mtgtracker.mp4"
+    ],
     "tags": "game,tool",
     "type": "app",
     "readme": "mtgtracker/README.md",
@@ -195,6 +206,7 @@
     "version": "3.1.2",
     "description": "Pip UI+ enhances the Pip-Boy 3000 Mk V with classic tabs like SPECIAL and PERKS, a real-time RAM monitor, options to hide interface elements, and a theme picker with more color options than the default interface.",
     "icon": "pipuiplus/assets/pipuiplus.png",
+    "previews": [],
     "tags": "bootloader,media,tool",
     "type": "bootloader",
     "readme": "pipuiplus/README.md",
@@ -587,18 +599,21 @@
     "author": "@gnargle",
     "version": "1.0.0",
     "description": "PipBoy Notes is a demo app intended to show off the new pipboy keyboard library, available for use for anyone in their apps.",
-    "icon": "pipBoyNotes/app.png",
+    "icon": "notes/app.png",
+    "previews": [
+      "notes.mp4"
+    ],
     "tags": "notes,writing,tool",
     "type": "app",
-    "readme": "pipBoyNotes/README.md",
+    "readme": "notes/README.md",
     "storage": [
       {
         "name": "USER/pipBoyNotes.js",
-        "url": "pipBoyNotes/pipBoyNotes.min.js"
+        "url": "notes/pipBoyNotes.min.js"
       },
       {
         "name": "node_modules/pbkb.js",
-        "url": "pipBoyNotes/assets/pbkb.js"
+        "url": "notes/assets/pbkb.js"
       }
     ]
   },
@@ -609,6 +624,9 @@
     "version": "1.0.0",
     "description": "PipTube lets Vault residents browse holotapes and loop training films directly in the Pip-Boy's DATA interface, calibrated for the approved 340x210 viewport.",
     "icon": "piptube/assets/piptube.png",
+    "previews": [
+      "piptube.mp4"
+    ],
     "tags": "media,video",
     "type": "app",
     "readme": "piptube/README.md",
@@ -630,6 +648,7 @@
     "version": "2.5.1",
     "description": "The SPECIAL/Skills/Perks menu for the Pip-Boy 3000 Mk V.",
     "icon": "statsdisplay/app.png",
+    "previews": [],
     "tags": "system",
     "type": "app",
     "readme": "statsdisplay/README.md",

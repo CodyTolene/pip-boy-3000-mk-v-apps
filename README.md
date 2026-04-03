@@ -112,7 +112,7 @@ This version shows contributor names in GitHub since it's not a fork.
 
 ## Create a New App or Game <a name="create-a-new-app-or-game"></a>
 
-To create a new app or game, add a new folder under the `apps` or `games` 
+To create a new app or game, add a new folder under the `apps` or `games`
 directory with the following structure:
 
 ```sh
@@ -151,7 +151,8 @@ README.md
     ```
 
 3.  Make your changes to the codebase, start with creating a new app or game
-    folder in the `apps` or `games` directory, and add your app's source code and metadata.
+    folder in the `apps` or `games` directory, and add your app's source code
+    and metadata.
 
     > ![info][img-info] See required files and metadata in the
     > [Create a new App or Game](#create-a-new-app-or-game) section below.

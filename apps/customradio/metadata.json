@@ -5,6 +5,7 @@
   "version": "3.3.3",
   "description": "Custom Radio lets you browse and play your own `.wav` music files directly from the `/RADIO` folder and nested directories (playlists), giving you full control over your playlist for wasteland adventures.",
   "icon": "assets/customradio.png",
+  "previews": [],
   "tags": "media,system",
   "type": "app",
   "readme": "README.md",

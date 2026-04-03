@@ -5,6 +5,7 @@
   "version": "1.0.2",
   "description": "AsteroPIPs is a simple game where you control a spaceship to shoot and avoid space rocks.",
   "icon": "asteropips.png",
+  "previews": ["asteropips.mp4"],
   "tags": "game",
   "type": "app",
   "readme": "README.md",

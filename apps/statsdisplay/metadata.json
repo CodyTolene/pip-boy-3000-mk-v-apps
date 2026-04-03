@@ -5,6 +5,7 @@
   "version": "2.5.1",
   "description": "The SPECIAL/Skills/Perks menu for the Pip-Boy 3000 Mk V.",
   "icon": "app.png",
+  "previews": [],
   "tags": "system",
   "type": "app",
   "readme": "README.md",
