@@ -200,6 +200,10 @@ npm run <script>
 
 This project is licensed under the MIT License.
 
+Some apps and games in this repository may have their own licenses. Check each
+app or game's individual files and README for license terms that apply to that
+specific project.
+
 See the [LICENSE-MIT](LICENSE-MIT) file for more details.
 
 `SPDX-License-Identifiers: MIT`
