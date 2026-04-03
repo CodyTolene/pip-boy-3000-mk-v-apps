@@ -8,6 +8,5 @@
   "tags": "game,tool",
   "type": "app",
   "readme": "README.md",
-  "custom": "",
   "storage": [{ "name": "USER/mtgtracker.js", "url": "mtgtracker.min.js" }]
 }

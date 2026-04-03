@@ -26,7 +26,6 @@
     "tags": "game",
     "type": "app",
     "readme": "asteropips/README.md",
-    "custom": "",
     "storage": [
       {
         "name": "USER/AsteroPIPs.js",
@@ -85,7 +84,6 @@
     "tags": "game,experiment",
     "type": "app",
     "readme": "gameexample/README.md",
-    "custom": "",
     "storage": [
       {
         "name": "USER/gameexample.js",
@@ -103,7 +101,6 @@
     "tags": "game",
     "type": "app",
     "readme": "pipdoom/README.md",
-    "custom": "",
     "storage": [
       {
         "name": "USER/pipdoom.js",
@@ -161,7 +158,6 @@
     "tags": "game",
     "type": "app",
     "readme": "pippong/README.md",
-    "custom": "",
     "storage": [
       {
         "name": "USER/pippong.js",
@@ -179,7 +175,6 @@
     "tags": "game",
     "type": "app",
     "readme": "pipsnake/README.md",
-    "custom": "",
     "storage": [
       {
         "name": "USER/pipsnake.js",
@@ -197,7 +192,6 @@
     "tags": "game",
     "type": "app",
     "readme": "pip2048/README.md",
-    "custom": "",
     "storage": [
       {
         "name": "USER/Pip2048.js",
@@ -215,7 +209,6 @@
     "tags": "game",
     "type": "app",
     "readme": "piptactoe/README.md",
-    "custom": "",
     "storage": [
       {
         "name": "USER/PipTacToe.js",
@@ -233,7 +226,6 @@
     "tags": "game",
     "type": "app",
     "readme": "piptris/README.md",
-    "custom": "piptris/install.html",
     "storage": [
       {
         "name": "USER/piptris.js",
@@ -262,6 +254,10 @@
       {
         "name": "USER/PIPTRIS/radioactive.json",
         "url": "piptris/assets/radioactive.json"
+      },
+      {
+        "name": "USER/PIPTRIS/piptris-symphony.wav",
+        "url": "piptris/assets/piptris-symphony.wav"
       }
     ]
   },
@@ -275,7 +271,6 @@
     "tags": "game",
     "type": "app",
     "readme": "portahack/README.md",
-    "custom": "",
     "storage": [
       {
         "name": "USER/portahack.js",
@@ -301,7 +296,6 @@
     "tags": "game",
     "type": "app",
     "readme": "vaultbreaker/README.md",
-    "custom": "",
     "storage": [
       {
         "name": "USER/vaultbreaker.js",

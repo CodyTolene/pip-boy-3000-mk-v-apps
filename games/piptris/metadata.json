@@ -8,7 +8,6 @@
   "tags": "game",
   "type": "app",
   "readme": "README.md",
-  "custom": "install.html",
   "storage": [
     { "name": "USER/piptris.js", "url": "app.min.js" },
     { "name": "USER/PIPTRIS/piptris.min.js", "url": "assets/piptris.min.js" },
@@ -16,9 +15,7 @@
     { "name": "USER/PIPTRIS/block.json", "url": "assets/block.json" },
     { "name": "USER/PIPTRIS/gear.json", "url": "assets/gear.json" },
     { "name": "USER/PIPTRIS/nuke.json", "url": "assets/nuke.json" },
-    {
-      "name": "USER/PIPTRIS/radioactive.json",
-      "url": "assets/radioactive.json"
-    }
+    { "name": "USER/PIPTRIS/radioactive.json", "url": "assets/radioactive.json" },
+    { "name": "USER/PIPTRIS/piptris-symphony.wav", "url": "assets/piptris-symphony.wav" }
   ]
 }

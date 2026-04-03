@@ -8,6 +8,5 @@
   "tags": "game",
   "type": "app",
   "readme": "README.md",
-  "custom": "",
   "storage": [{ "name": "USER/Pip2048.js", "url": "Pip2048.min.js" }]
 }

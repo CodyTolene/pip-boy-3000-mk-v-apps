@@ -1,60 +1,5 @@
 [
   {
-    "id": "customalarm",
-    "name": "Custom Alarm",
-    "author": "@rblakesley",
-    "version": "0.01",
-    "description": "Upload a custom audio file for the alarm",
-    "icon": "customalarm/app.png",
-    "tags": "media,tool",
-    "type": "map",
-    "readme": "customalarm/README.md",
-    "custom": "customalarm/custom.html",
-    "storage": [
-      {
-        "name": "ALARM/CUSTOM.WAV"
-      }
-    ]
-  },
-  {
-    "id": "customimg",
-    "name": "Custom Image",
-    "author": "@rblakesley",
-    "version": "1.0.1",
-    "description": "Upload a custom image",
-    "icon": "customimg/app.png",
-    "tags": "media,tool",
-    "type": "app",
-    "readme": "customimg/README.md",
-    "custom": "customimg/custom.html",
-    "storage": [
-      {
-        "name": "USER/customimg.js",
-        "url": "customimg/app.js"
-      },
-      {
-        "name": "USER/customimg.img"
-      }
-    ]
-  },
-  {
-    "id": "custommap",
-    "name": "Custom Map",
-    "author": "@rblakesley",
-    "version": "0.01",
-    "description": "Upload a custom image to use as a map to your Pip-Boy",
-    "icon": "custommap/app.png",
-    "tags": "media,system",
-    "type": "map",
-    "readme": "custommap/README.md",
-    "custom": "custommap/custom.html",
-    "storage": [
-      {
-        "name": "MAP/MAP.img"
-      }
-    ]
-  },
-  {
     "id": "customradio",
     "name": "Custom Radio",
     "author": "@CodyTolene",
@@ -64,7 +9,6 @@
     "tags": "media,system",
     "type": "app",
     "readme": "customradio/README.md",
-    "custom": "",
     "storage": [
       {
         "name": "USER/customradio.js",
@@ -73,27 +17,6 @@
       {
         "name": "USER/CUSTOM_RADIO/customradio.min.js",
         "url": "customradio/assets/customradio.min.js"
-      }
-    ]
-  },
-  {
-    "id": "customtext",
-    "name": "Custom Text",
-    "author": "@rblakesley",
-    "version": "1.0.1",
-    "description": "Upload some customised text to your Pip-boy",
-    "icon": "customtext/app.png",
-    "tags": "media,tool",
-    "type": "app",
-    "readme": "customtext/README.md",
-    "custom": "customtext/custom.html",
-    "storage": [
-      {
-        "name": "USER/customtext.js",
-        "url": "customtext/app.js"
-      },
-      {
-        "name": "USER/customtext.txt"
       }
     ]
   },
@@ -107,7 +30,6 @@
     "tags": "game,tool",
     "type": "app",
     "readme": "diceroller/README.md",
-    "custom": "",
     "storage": [
       {
         "name": "USER/diceroller.js",
@@ -141,32 +63,10 @@
     "tags": "media,tool",
     "type": "app",
     "readme": "fileexplorer/README.md",
-    "custom": "",
     "storage": [
       {
         "name": "USER/fileexplorer.js",
         "url": "fileexplorer/app.min.js"
-      }
-    ]
-  },
-  {
-    "id": "idcard",
-    "name": "ID Card",
-    "author": "@rblakesley",
-    "version": "1.0.1",
-    "description": "Create a customised ID card",
-    "icon": "idcard/app.png",
-    "tags": "media,tool",
-    "type": "app",
-    "readme": "idcard/README.md",
-    "custom": "idcard/custom.html",
-    "storage": [
-      {
-        "name": "USER/idcard.js",
-        "url": "idcard/app.js"
-      },
-      {
-        "name": "USER/idcard.img"
       }
     ]
   },
@@ -180,7 +80,6 @@
     "tags": "app,system",
     "type": "app",
     "readme": "inventoryapp/README.md",
-    "custom": "",
     "storage": [
       {
         "name": "USER_BOOT/invPatch.js",
@@ -282,7 +181,6 @@
     "tags": "game,tool",
     "type": "app",
     "readme": "mtgtracker/README.md",
-    "custom": "",
     "storage": [
       {
         "name": "USER/mtgtracker.js",
@@ -300,7 +198,6 @@
     "tags": "bootloader,media,tool",
     "type": "bootloader",
     "readme": "pipuiplus/README.md",
-    "custom": "",
     "storage": [
       {
         "name": "USER/pipuiplus.js",
@@ -715,7 +612,6 @@
     "tags": "media,video",
     "type": "app",
     "readme": "piptube/README.md",
-    "custom": "",
     "storage": [
       {
         "name": "USER/piptube.js",
@@ -726,20 +622,6 @@
         "url": "piptube/assets/piptube.min.js"
       }
     ]
-  },
-  {
-    "id": "settings",
-    "name": "Settings",
-    "author": "@rblakesley",
-    "version": "0.01",
-    "description": "Allows you to tweak settings on your Pip-boy",
-    "icon": "settings/app.png",
-    "tags": "system",
-    "type": "RAM",
-    "readme": "settings/README.md",
-    "custom": "settings/custom.html",
-    "customConnect": true,
-    "storage": []
   },
   {
     "id": "statsdisplay",

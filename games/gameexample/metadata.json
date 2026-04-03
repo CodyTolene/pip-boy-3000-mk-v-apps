@@ -8,6 +8,5 @@
   "tags": "game,experiment",
   "type": "app",
   "readme": "README.md",
-  "custom": "",
   "storage": [{ "name": "USER/gameexample.js", "url": "app.min.js" }]
 }

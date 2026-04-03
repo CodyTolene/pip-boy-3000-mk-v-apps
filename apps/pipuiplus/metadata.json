@@ -8,7 +8,6 @@
   "tags": "bootloader,media,tool",
   "type": "bootloader",
   "readme": "README.md",
-  "custom": "",
   "storage": [
     { "name": "USER/pipuiplus.js", "url": "app.min.js" },
     {

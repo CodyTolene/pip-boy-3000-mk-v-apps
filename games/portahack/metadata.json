@@ -8,7 +8,6 @@
   "tags": "game",
   "type": "app",
   "readme": "README.md",
-  "custom": "",
   "storage": [
     { "name": "USER/portahack.js", "url": "app.min.js" },
     {

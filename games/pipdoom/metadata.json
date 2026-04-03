@@ -8,7 +8,6 @@
   "tags": "game",
   "type": "app",
   "readme": "README.md",
-  "custom": "",
   "storage": [
     { "name": "USER/pipdoom.js", "url": "app.min.js" },
     { "name": "USER/PIP_DOOM/pipdoom.min.js", "url": "assets/pipdoom.min.js" },

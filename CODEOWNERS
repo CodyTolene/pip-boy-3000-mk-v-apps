@@ -1,19 +1,13 @@
 * @CodyTolene
 
-/apps/customalarm/    @rblakesley
-/apps/customimg/      @rblakesley
-/apps/custommap/      @rblakesley
 /apps/customradio/    @CodyTolene
-/apps/customtext/     @rblakesley
 /apps/diceroller/     @CodyTolene
 /apps/fileexplorer/   @CodyTolene
-/apps/idcard/         @rblakesley
 /apps/inventoryapp/   @AidansLab
 /apps/mtgtracker/     @tylerjbartlett
 /apps/pipboynotes/    @gnargle
 /apps/piptube/        @CodyTolene
 /apps/pipuiplus/      @MercurialPony @CodyTolene @gnargle
-/apps/settings        @rblakesley
 /apps/statsdisplay/   @gnargle
 
 /games/asteroid/       @rblakesley

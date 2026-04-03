@@ -8,7 +8,6 @@
   "tags": "app,system",
   "type": "app",
   "readme": "README.md",
-  "custom": "",
   "storage": [
     { "name": "USER_BOOT/invPatch.js", "url": "invPatch.min.js" },
     { "name": "DATA/EquipDown_01.wav", "url": "DATA/EquipDown_01.wav" },

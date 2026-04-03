@@ -8,6 +8,5 @@
   "tags": "game",
   "type": "app",
   "readme": "README.md",
-  "custom": "",
   "storage": [{ "name": "USER/pippong.js", "url": "PipPong.min.js" }]
 }

@@ -8,7 +8,6 @@
   "tags": "media,system",
   "type": "app",
   "readme": "README.md",
-  "custom": "",
   "storage": [
     { "name": "USER/customradio.js", "url": "app.min.js" },
     {
