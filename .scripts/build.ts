@@ -24,12 +24,56 @@ type Metadata = {
   [key: string]: JsonValue | undefined;
 };
 
-type CatalogEntry = Metadata & {
-  sourcePath: string;
-};
-
 const rootDir = process.cwd();
-const srcDir = path.join(rootDir, 'src');
+
+function normalizePath(value: string): string {
+  return value.replaceAll('\\', '/');
+}
+
+function joinWebPath(...parts: string[]): string {
+  return normalizePath(parts.join('/').replaceAll(/\/+/g, '/'));
+}
+
+function isRelativeAssetPath(value: string): boolean {
+  return value.length > 0 && !value.startsWith('/') && !/^[a-z]+:/i.test(value);
+}
+
+function prefixAssetPath(
+  value: string | undefined,
+  entryDir: string,
+): string | undefined {
+  if (value === undefined || !isRelativeAssetPath(value)) {
+    return value;
+  }
+
+  return joinWebPath(entryDir, value);
+}
+
+function rewriteStorage(
+  storage: JsonValue[] | undefined,
+  entryDir: string,
+): JsonValue[] | undefined {
+  if (!storage) {
+    return storage;
+  }
+
+  return storage.map((item) => {
+    if (!item || Array.isArray(item) || typeof item !== 'object') {
+      return item;
+    }
+
+    const url = item.url;
+    if (typeof url !== 'string') {
+      return item;
+    }
+
+    const prefixedUrl = prefixAssetPath(url, entryDir);
+    return {
+      ...item,
+      url: prefixedUrl,
+    } as JsonValue;
+  });
+}
 
 async function findMetadataFiles(dir: string): Promise<string[]> {
   const entries = await fs.readdir(dir, { withFileTypes: true });
@@ -48,51 +92,50 @@ async function findMetadataFiles(dir: string): Promise<string[]> {
   return files.flat();
 }
 
-async function readMetadata(filePath: string): Promise<CatalogEntry> {
-  const raw = await fs.readFile(filePath, 'utf8');
-  const metadata = JSON.parse(raw) as Metadata;
-
-  return {
-    ...metadata,
-    sourcePath: path
-      .relative(rootDir, path.dirname(filePath))
-      .replaceAll('\\', '/'),
-  };
-}
-
-function byNameOrId(a: CatalogEntry, b: CatalogEntry): number {
+function byNameOrId(a: Metadata, b: Metadata): number {
   const left = (a.name ?? a.id ?? '').toLowerCase();
   const right = (b.name ?? b.id ?? '').toLowerCase();
   return left.localeCompare(right);
 }
 
-async function writeCatalog(
-  fileName: string,
-  entries: CatalogEntry[],
-): Promise<void> {
-  const outputPath = path.join(rootDir, fileName);
+async function buildCatalog(directoryName: string): Promise<number> {
+  const sectionDir = path.join(rootDir, directoryName);
+  const metadataFiles = await findMetadataFiles(sectionDir);
+  const entries = await Promise.all(
+    metadataFiles.map(async (filePath) => {
+      const raw = await fs.readFile(filePath, 'utf8');
+      const metadata = JSON.parse(raw) as Metadata;
+      const entryDir = normalizePath(
+        path.relative(sectionDir, path.dirname(filePath)),
+      );
+
+      return {
+        ...metadata,
+        icon: prefixAssetPath(metadata.icon, entryDir),
+        readme: prefixAssetPath(metadata.readme, entryDir),
+        custom: prefixAssetPath(metadata.custom, entryDir),
+        storage: rewriteStorage(metadata.storage, entryDir),
+      } as Metadata;
+    }),
+  );
+
   await fs.writeFile(
-    outputPath,
-    `${JSON.stringify(entries, null, 2)}\n`,
+    path.join(sectionDir, `${directoryName}.json`),
+    `${JSON.stringify(entries.sort(byNameOrId), null, 2)}\n`,
     'utf8',
   );
+
+  return entries.length;
 }
 
 async function main(): Promise<void> {
-  const metadataFiles = await findMetadataFiles(srcDir);
-  const entries = await Promise.all(metadataFiles.map(readMetadata));
-  const sortedEntries = entries.sort(byNameOrId);
-
-  const games = sortedEntries.filter((entry) => entry.tags === 'game');
-  const apps = sortedEntries.filter((entry) => entry.tags !== 'game');
-
-  await Promise.all([
-    writeCatalog('games.json', games),
-    writeCatalog('apps.json', apps),
+  const [appCount, gameCount] = await Promise.all([
+    buildCatalog('apps'),
+    buildCatalog('games'),
   ]);
 
   process.stdout.write(
-    `Wrote ${apps.length} apps to apps.json and ${games.length} games to games.json.\n`,
+    `Wrote ${appCount} apps to apps/apps.json and ${gameCount} games to games/games.json.\n`,
   );
 }
 

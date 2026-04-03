@@ -1,0 +1,949 @@
+[
+  {
+    "id": "customalarm",
+    "name": "Custom Alarm",
+    "author": "@rblakesley",
+    "version": "0.01",
+    "description": "Upload a custom audio file for the alarm",
+    "icon": "customalarm/app.png",
+    "tags": "media,tool",
+    "type": "map",
+    "readme": "customalarm/README.md",
+    "custom": "customalarm/custom.html",
+    "storage": [
+      {
+        "name": "ALARM/CUSTOM.WAV"
+      }
+    ]
+  },
+  {
+    "id": "customimg",
+    "name": "Custom Image",
+    "author": "@rblakesley",
+    "version": "1.0.1",
+    "description": "Upload a custom image",
+    "icon": "customimg/app.png",
+    "tags": "media,tool",
+    "type": "app",
+    "readme": "customimg/README.md",
+    "custom": "customimg/custom.html",
+    "storage": [
+      {
+        "name": "USER/customimg.js",
+        "url": "customimg/app.js"
+      },
+      {
+        "name": "USER/customimg.img"
+      }
+    ]
+  },
+  {
+    "id": "custommap",
+    "name": "Custom Map",
+    "author": "@rblakesley",
+    "version": "0.01",
+    "description": "Upload a custom image to use as a map to your Pip-Boy",
+    "icon": "custommap/app.png",
+    "tags": "media,system",
+    "type": "map",
+    "readme": "custommap/README.md",
+    "custom": "custommap/custom.html",
+    "storage": [
+      {
+        "name": "MAP/MAP.img"
+      }
+    ]
+  },
+  {
+    "id": "customradio",
+    "name": "Custom Radio",
+    "author": "@CodyTolene",
+    "version": "3.3.3",
+    "description": "Custom Radio lets you browse and play your own `.wav` music files directly from the `/RADIO` folder and nested directories (playlists), giving you full control over your playlist for wasteland adventures.",
+    "icon": "customradio/assets/customradio.png",
+    "tags": "media,system",
+    "type": "app",
+    "readme": "customradio/README.md",
+    "custom": "",
+    "storage": [
+      {
+        "name": "USER/customradio.js",
+        "url": "customradio/app.min.js"
+      },
+      {
+        "name": "USER/CUSTOM_RADIO/customradio.min.js",
+        "url": "customradio/assets/customradio.min.js"
+      }
+    ]
+  },
+  {
+    "id": "customtext",
+    "name": "Custom Text",
+    "author": "@rblakesley",
+    "version": "1.0.1",
+    "description": "Upload some customised text to your Pip-boy",
+    "icon": "customtext/app.png",
+    "tags": "media,tool",
+    "type": "app",
+    "readme": "customtext/README.md",
+    "custom": "customtext/custom.html",
+    "storage": [
+      {
+        "name": "USER/customtext.js",
+        "url": "customtext/app.js"
+      },
+      {
+        "name": "USER/customtext.txt"
+      }
+    ]
+  },
+  {
+    "id": "diceroller",
+    "name": "Dice Roller",
+    "author": "@CodyTolene",
+    "version": "1.2.1",
+    "description": "Toss tabletop dice: D2, D4, D6, D8, D10, D12, D20, and D100. War never changes, but your roll might!",
+    "icon": "diceroller/assets/diceroller.png",
+    "tags": "game,tool",
+    "type": "app",
+    "readme": "diceroller/README.md",
+    "custom": "",
+    "storage": [
+      {
+        "name": "USER/diceroller.js",
+        "url": "diceroller/app.min.js"
+      },
+      {
+        "name": "USER/DICE_ROLLER/diceroller.min.js",
+        "url": "diceroller/assets/diceroller.min.js"
+      },
+      {
+        "name": "USER/DICE_ROLLER/coin-drop.wav",
+        "url": "diceroller/assets/coin-drop.wav"
+      },
+      {
+        "name": "USER/DICE_ROLLER/coin-flip.wav",
+        "url": "diceroller/assets/coin-flip.wav"
+      },
+      {
+        "name": "USER/DICE_ROLLER/dice-throw.wav",
+        "url": "diceroller/assets/dice-throw.wav"
+      }
+    ]
+  },
+  {
+    "id": "fileexplorer",
+    "name": "File Explorer",
+    "author": "@CodyTolene",
+    "version": "2.2.1",
+    "description": "Seamlessly browse your system's directories and view pre-approved images, videos, and text files. Designed for clarity, built for the future, just the way Vault-Tec intended.",
+    "icon": "fileexplorer/fileexplorer.png",
+    "tags": "media,tool",
+    "type": "app",
+    "readme": "fileexplorer/README.md",
+    "custom": "",
+    "storage": [
+      {
+        "name": "USER/fileexplorer.js",
+        "url": "fileexplorer/app.min.js"
+      }
+    ]
+  },
+  {
+    "id": "idcard",
+    "name": "ID Card",
+    "author": "@rblakesley",
+    "version": "1.0.1",
+    "description": "Create a customised ID card",
+    "icon": "idcard/app.png",
+    "tags": "media,tool",
+    "type": "app",
+    "readme": "idcard/README.md",
+    "custom": "idcard/custom.html",
+    "storage": [
+      {
+        "name": "USER/idcard.js",
+        "url": "idcard/app.js"
+      },
+      {
+        "name": "USER/idcard.img"
+      }
+    ]
+  },
+  {
+    "id": "inventoryapp",
+    "name": "Inventory App",
+    "author": "@AidansLab",
+    "version": "1.5.2",
+    "description": "The inventory app adds a customizable and interactable inventory. (MAKE SURE TO CLICK READ MORE...)",
+    "icon": "inventoryapp/invPatch.png",
+    "tags": "app,system",
+    "type": "app",
+    "readme": "inventoryapp/README.md",
+    "custom": "",
+    "storage": [
+      {
+        "name": "USER_BOOT/invPatch.js",
+        "url": "inventoryapp/invPatch.min.js"
+      },
+      {
+        "name": "DATA/EquipDown_01.wav",
+        "url": "inventoryapp/DATA/EquipDown_01.wav"
+      },
+      {
+        "name": "DATA/EquipDown_02.wav",
+        "url": "inventoryapp/DATA/EquipDown_02.wav"
+      },
+      {
+        "name": "DATA/EquipDown_03.wav",
+        "url": "inventoryapp/DATA/EquipDown_03.wav"
+      },
+      {
+        "name": "DATA/EquipUp_01.wav",
+        "url": "inventoryapp/DATA/EquipUp_01.wav"
+      },
+      {
+        "name": "DATA/EquipUp_02.wav",
+        "url": "inventoryapp/DATA/EquipUp_02.wav"
+      },
+      {
+        "name": "DATA/EquipUp_03.wav",
+        "url": "inventoryapp/DATA/EquipUp_03.wav"
+      },
+      {
+        "name": "DATA/ICONS.json",
+        "url": "inventoryapp/DATA/ICONS.json"
+      },
+      {
+        "name": "DATA/items_0.json",
+        "url": "inventoryapp/DATA/items_0.json"
+      },
+      {
+        "name": "DATA/items_1.json",
+        "url": "inventoryapp/DATA/items_1.json"
+      },
+      {
+        "name": "DATA/items_meta.json",
+        "url": "inventoryapp/DATA/items_meta.json"
+      },
+      {
+        "name": "DATA/NukaCola.wav",
+        "url": "inventoryapp/DATA/NukaCola.wav"
+      },
+      {
+        "name": "DATA/Radaway.wav",
+        "url": "inventoryapp/DATA/Radaway.wav"
+      },
+      {
+        "name": "DATA/Radaway_img.js",
+        "url": "inventoryapp/DATA/Radaway_img.js"
+      },
+      {
+        "name": "DATA/RadX_01.wav",
+        "url": "inventoryapp/DATA/RadX_01.wav"
+      },
+      {
+        "name": "DATA/RadX_02.wav",
+        "url": "inventoryapp/DATA/RadX_02.wav"
+      },
+      {
+        "name": "DATA/Shishkebab_img.js",
+        "url": "inventoryapp/DATA/Shishkebab_img.js"
+      },
+      {
+        "name": "DATA/Soda_01.wav",
+        "url": "inventoryapp/DATA/Soda_01.wav"
+      },
+      {
+        "name": "DATA/Soda_02.wav",
+        "url": "inventoryapp/DATA/Soda_02.wav"
+      },
+      {
+        "name": "DATA/Soda_03.wav",
+        "url": "inventoryapp/DATA/Soda_03.wav"
+      },
+      {
+        "name": "DATA/Stimpak.wav",
+        "url": "inventoryapp/DATA/Stimpak.wav"
+      },
+      {
+        "name": "DATA/Stimpak_img.js",
+        "url": "inventoryapp/DATA/Stimpak_img.js"
+      }
+    ]
+  },
+  {
+    "id": "mtgtracker",
+    "name": "MTG Life Counter",
+    "author": "@tylerjbartlett",
+    "version": "1.0.1",
+    "description": "A Pip-powered life counter for Magic the Gathering with standard 20 life games and 40/21 life Commander games for 1-4 players. 1-2 players recommended.",
+    "icon": "mtgtracker/mtgtracker.png",
+    "tags": "game,tool",
+    "type": "app",
+    "readme": "mtgtracker/README.md",
+    "custom": "",
+    "storage": [
+      {
+        "name": "USER/mtgtracker.js",
+        "url": "mtgtracker/mtgtracker.min.js"
+      }
+    ]
+  },
+  {
+    "id": "pipuiplus",
+    "name": "Pip UI+",
+    "author": "@MercurialPony @CodyTolene @gnargle",
+    "version": "3.1.2",
+    "description": "Pip UI+ enhances the Pip-Boy 3000 Mk V with classic tabs like SPECIAL and PERKS, a real-time RAM monitor, options to hide interface elements, and a theme picker with more color options than the default interface.",
+    "icon": "pipuiplus/assets/pipuiplus.png",
+    "tags": "bootloader,media,tool",
+    "type": "bootloader",
+    "readme": "pipuiplus/README.md",
+    "custom": "",
+    "storage": [
+      {
+        "name": "USER/pipuiplus.js",
+        "url": "pipuiplus/app.min.js"
+      },
+      {
+        "name": "USER/PIP_UI_PLUS/options.json",
+        "url": "pipuiplus/assets/options.json"
+      },
+      {
+        "name": "USER_BOOT/IconsLoader.min.js",
+        "url": "pipuiplus/assets/IconsLoader.min.js"
+      },
+      {
+        "name": "USER_BOOT/PipUiPlusLoader.min.js",
+        "url": "pipuiplus/assets/PipUiPlusLoader.min.js"
+      },
+      {
+        "name": "USER_BOOT/RAMScanLoader.min.js",
+        "url": "pipuiplus/assets/RAMScanLoader.min.js"
+      },
+      {
+        "name": "USER_BOOT/ThemePickerLoader.min.js",
+        "url": "pipuiplus/assets/ThemePickerLoader.min.js"
+      },
+      {
+        "name": "USER_BOOT/PIP_UI_PLUS/ThemePicker.min.js",
+        "url": "pipuiplus/assets/ThemePicker.min.js"
+      },
+      {
+        "name": "USER_BOOT/PIP_UI_PLUS/ThemePickerPreloader.min.js",
+        "url": "pipuiplus/assets/ThemePickerPreloader.min.js"
+      },
+      {
+        "name": "USER_BOOT/PIP_UI_PLUS/Menu.min.js",
+        "url": "pipuiplus/assets/Menu.min.js"
+      },
+      {
+        "name": "USER_BOOT/PIP_UI_PLUS/Perks.min.js",
+        "url": "pipuiplus/assets/Perks.min.js"
+      },
+      {
+        "name": "USER_BOOT/PIP_UI_PLUS/Special.min.js",
+        "url": "pipuiplus/assets/Special.min.js"
+      },
+      {
+        "name": "USER_BOOT/PIP_UI_PLUS/PERKS/_enabled_perks.dat",
+        "url": "pipuiplus/assets/PERKS/_enabled_perks.dat"
+      },
+      {
+        "name": "USER_BOOT/PIP_UI_PLUS/PERKS/_perks.dat",
+        "url": "pipuiplus/assets/PERKS/_perks.dat"
+      },
+      {
+        "name": "USER_BOOT/PIP_UI_PLUS/SPECIAL/_special.dat",
+        "url": "pipuiplus/assets/SPECIAL/_special.dat"
+      },
+      {
+        "name": "USER_BOOT/PIP_UI_PLUS/PERKS/action_boy.avi",
+        "url": "pipuiplus/assets/PERKS/action_boy.avi"
+      },
+      {
+        "name": "USER_BOOT/PIP_UI_PLUS/PERKS/action_girl.avi",
+        "url": "pipuiplus/assets/PERKS/action_girl.avi"
+      },
+      {
+        "name": "USER_BOOT/PIP_UI_PLUS/PERKS/adamantium_skeleton.avi",
+        "url": "pipuiplus/assets/PERKS/adamantium_skeleton.avi"
+      },
+      {
+        "name": "USER_BOOT/PIP_UI_PLUS/PERKS/animal_friend.avi",
+        "url": "pipuiplus/assets/PERKS/animal_friend.avi"
+      },
+      {
+        "name": "USER_BOOT/PIP_UI_PLUS/PERKS/aquaboy.avi",
+        "url": "pipuiplus/assets/PERKS/aquaboy.avi"
+      },
+      {
+        "name": "USER_BOOT/PIP_UI_PLUS/PERKS/aquagirl.avi",
+        "url": "pipuiplus/assets/PERKS/aquagirl.avi"
+      },
+      {
+        "name": "USER_BOOT/PIP_UI_PLUS/PERKS/armorer.avi",
+        "url": "pipuiplus/assets/PERKS/armorer.avi"
+      },
+      {
+        "name": "USER_BOOT/PIP_UI_PLUS/PERKS/attack_dog.avi",
+        "url": "pipuiplus/assets/PERKS/attack_dog.avi"
+      },
+      {
+        "name": "USER_BOOT/PIP_UI_PLUS/PERKS/awareness.avi",
+        "url": "pipuiplus/assets/PERKS/awareness.avi"
+      },
+      {
+        "name": "USER_BOOT/PIP_UI_PLUS/PERKS/basher.avi",
+        "url": "pipuiplus/assets/PERKS/basher.avi"
+      },
+      {
+        "name": "USER_BOOT/PIP_UI_PLUS/PERKS/better_criticals.avi",
+        "url": "pipuiplus/assets/PERKS/better_criticals.avi"
+      },
+      {
+        "name": "USER_BOOT/PIP_UI_PLUS/PERKS/big_leagues.avi",
+        "url": "pipuiplus/assets/PERKS/big_leagues.avi"
+      },
+      {
+        "name": "USER_BOOT/PIP_UI_PLUS/PERKS/blacksmith.avi",
+        "url": "pipuiplus/assets/PERKS/blacksmith.avi"
+      },
+      {
+        "name": "USER_BOOT/PIP_UI_PLUS/PERKS/black_widow.avi",
+        "url": "pipuiplus/assets/PERKS/black_widow.avi"
+      },
+      {
+        "name": "USER_BOOT/PIP_UI_PLUS/PERKS/blitz.avi",
+        "url": "pipuiplus/assets/PERKS/blitz.avi"
+      },
+      {
+        "name": "USER_BOOT/PIP_UI_PLUS/PERKS/bloody_mess.avi",
+        "url": "pipuiplus/assets/PERKS/bloody_mess.avi"
+      },
+      {
+        "name": "USER_BOOT/PIP_UI_PLUS/PERKS/cannibal.avi",
+        "url": "pipuiplus/assets/PERKS/cannibal.avi"
+      },
+      {
+        "name": "USER_BOOT/PIP_UI_PLUS/PERKS/cap_collector.avi",
+        "url": "pipuiplus/assets/PERKS/cap_collector.avi"
+      },
+      {
+        "name": "USER_BOOT/PIP_UI_PLUS/PERKS/chemist.avi",
+        "url": "pipuiplus/assets/PERKS/chemist.avi"
+      },
+      {
+        "name": "USER_BOOT/PIP_UI_PLUS/PERKS/chem_resistant.avi",
+        "url": "pipuiplus/assets/PERKS/chem_resistant.avi"
+      },
+      {
+        "name": "USER_BOOT/PIP_UI_PLUS/PERKS/commando.avi",
+        "url": "pipuiplus/assets/PERKS/commando.avi"
+      },
+      {
+        "name": "USER_BOOT/PIP_UI_PLUS/PERKS/concentrated_fire.avi",
+        "url": "pipuiplus/assets/PERKS/concentrated_fire.avi"
+      },
+      {
+        "name": "USER_BOOT/PIP_UI_PLUS/PERKS/critical_banker.avi",
+        "url": "pipuiplus/assets/PERKS/critical_banker.avi"
+      },
+      {
+        "name": "USER_BOOT/PIP_UI_PLUS/PERKS/demolition_expert.avi",
+        "url": "pipuiplus/assets/PERKS/demolition_expert.avi"
+      },
+      {
+        "name": "USER_BOOT/PIP_UI_PLUS/PERKS/fortune_finder.avi",
+        "url": "pipuiplus/assets/PERKS/fortune_finder.avi"
+      },
+      {
+        "name": "USER_BOOT/PIP_UI_PLUS/PERKS/four_leaf_clover.avi",
+        "url": "pipuiplus/assets/PERKS/four_leaf_clover.avi"
+      },
+      {
+        "name": "USER_BOOT/PIP_UI_PLUS/PERKS/ghoulish.avi",
+        "url": "pipuiplus/assets/PERKS/ghoulish.avi"
+      },
+      {
+        "name": "USER_BOOT/PIP_UI_PLUS/PERKS/grim_reapers_sprint.avi",
+        "url": "pipuiplus/assets/PERKS/grim_reapers_sprint.avi"
+      },
+      {
+        "name": "USER_BOOT/PIP_UI_PLUS/PERKS/gunslinger.avi",
+        "url": "pipuiplus/assets/PERKS/gunslinger.avi"
+      },
+      {
+        "name": "USER_BOOT/PIP_UI_PLUS/PERKS/gun_fu.avi",
+        "url": "pipuiplus/assets/PERKS/gun_fu.avi"
+      },
+      {
+        "name": "USER_BOOT/PIP_UI_PLUS/PERKS/gun_nut.avi",
+        "url": "pipuiplus/assets/PERKS/gun_nut.avi"
+      },
+      {
+        "name": "USER_BOOT/PIP_UI_PLUS/PERKS/hacker.avi",
+        "url": "pipuiplus/assets/PERKS/hacker.avi"
+      },
+      {
+        "name": "USER_BOOT/PIP_UI_PLUS/PERKS/heavy_gunner.avi",
+        "url": "pipuiplus/assets/PERKS/heavy_gunner.avi"
+      },
+      {
+        "name": "USER_BOOT/PIP_UI_PLUS/PERKS/idiot_savant.avi",
+        "url": "pipuiplus/assets/PERKS/idiot_savant.avi"
+      },
+      {
+        "name": "USER_BOOT/PIP_UI_PLUS/PERKS/inspirational.avi",
+        "url": "pipuiplus/assets/PERKS/inspirational.avi"
+      },
+      {
+        "name": "USER_BOOT/PIP_UI_PLUS/PERKS/intimidation.avi",
+        "url": "pipuiplus/assets/PERKS/intimidation.avi"
+      },
+      {
+        "name": "USER_BOOT/PIP_UI_PLUS/PERKS/iron_fist.avi",
+        "url": "pipuiplus/assets/PERKS/iron_fist.avi"
+      },
+      {
+        "name": "USER_BOOT/PIP_UI_PLUS/PERKS/lady_killer.avi",
+        "url": "pipuiplus/assets/PERKS/lady_killer.avi"
+      },
+      {
+        "name": "USER_BOOT/PIP_UI_PLUS/PERKS/lead_belly.avi",
+        "url": "pipuiplus/assets/PERKS/lead_belly.avi"
+      },
+      {
+        "name": "USER_BOOT/PIP_UI_PLUS/PERKS/life_giver.avi",
+        "url": "pipuiplus/assets/PERKS/life_giver.avi"
+      },
+      {
+        "name": "USER_BOOT/PIP_UI_PLUS/PERKS/local_leader.avi",
+        "url": "pipuiplus/assets/PERKS/local_leader.avi"
+      },
+      {
+        "name": "USER_BOOT/PIP_UI_PLUS/PERKS/locksmith.avi",
+        "url": "pipuiplus/assets/PERKS/locksmith.avi"
+      },
+      {
+        "name": "USER_BOOT/PIP_UI_PLUS/PERKS/lone_wanderer.avi",
+        "url": "pipuiplus/assets/PERKS/lone_wanderer.avi"
+      },
+      {
+        "name": "USER_BOOT/PIP_UI_PLUS/PERKS/medic.avi",
+        "url": "pipuiplus/assets/PERKS/medic.avi"
+      },
+      {
+        "name": "USER_BOOT/PIP_UI_PLUS/PERKS/mister_sandman.avi",
+        "url": "pipuiplus/assets/PERKS/mister_sandman.avi"
+      },
+      {
+        "name": "USER_BOOT/PIP_UI_PLUS/PERKS/moving_target.avi",
+        "url": "pipuiplus/assets/PERKS/moving_target.avi"
+      },
+      {
+        "name": "USER_BOOT/PIP_UI_PLUS/PERKS/mysterious_stranger.avi",
+        "url": "pipuiplus/assets/PERKS/mysterious_stranger.avi"
+      },
+      {
+        "name": "USER_BOOT/PIP_UI_PLUS/PERKS/nerd_rage.avi",
+        "url": "pipuiplus/assets/PERKS/nerd_rage.avi"
+      },
+      {
+        "name": "USER_BOOT/PIP_UI_PLUS/PERKS/night_person.avi",
+        "url": "pipuiplus/assets/PERKS/night_person.avi"
+      },
+      {
+        "name": "USER_BOOT/PIP_UI_PLUS/PERKS/ninja.avi",
+        "url": "pipuiplus/assets/PERKS/ninja.avi"
+      },
+      {
+        "name": "USER_BOOT/PIP_UI_PLUS/PERKS/nuclear_physicist.avi",
+        "url": "pipuiplus/assets/PERKS/nuclear_physicist.avi"
+      },
+      {
+        "name": "USER_BOOT/PIP_UI_PLUS/PERKS/pain_train.avi",
+        "url": "pipuiplus/assets/PERKS/pain_train.avi"
+      },
+      {
+        "name": "USER_BOOT/PIP_UI_PLUS/PERKS/party_boy.avi",
+        "url": "pipuiplus/assets/PERKS/party_boy.avi"
+      },
+      {
+        "name": "USER_BOOT/PIP_UI_PLUS/PERKS/party_girl.avi",
+        "url": "pipuiplus/assets/PERKS/party_girl.avi"
+      },
+      {
+        "name": "USER_BOOT/PIP_UI_PLUS/PERKS/penetrator.avi",
+        "url": "pipuiplus/assets/PERKS/penetrator.avi"
+      },
+      {
+        "name": "USER_BOOT/PIP_UI_PLUS/PERKS/pickpocket.avi",
+        "url": "pipuiplus/assets/PERKS/pickpocket.avi"
+      },
+      {
+        "name": "USER_BOOT/PIP_UI_PLUS/PERKS/quick_hands.avi",
+        "url": "pipuiplus/assets/PERKS/quick_hands.avi"
+      },
+      {
+        "name": "USER_BOOT/PIP_UI_PLUS/PERKS/rad_resistant.avi",
+        "url": "pipuiplus/assets/PERKS/rad_resistant.avi"
+      },
+      {
+        "name": "USER_BOOT/PIP_UI_PLUS/PERKS/refractor.avi",
+        "url": "pipuiplus/assets/PERKS/refractor.avi"
+      },
+      {
+        "name": "USER_BOOT/PIP_UI_PLUS/PERKS/ricochet.avi",
+        "url": "pipuiplus/assets/PERKS/ricochet.avi"
+      },
+      {
+        "name": "USER_BOOT/PIP_UI_PLUS/PERKS/rifleman.avi",
+        "url": "pipuiplus/assets/PERKS/rifleman.avi"
+      },
+      {
+        "name": "USER_BOOT/PIP_UI_PLUS/PERKS/robotics_expert.avi",
+        "url": "pipuiplus/assets/PERKS/robotics_expert.avi"
+      },
+      {
+        "name": "USER_BOOT/PIP_UI_PLUS/PERKS/rooted.avi",
+        "url": "pipuiplus/assets/PERKS/rooted.avi"
+      },
+      {
+        "name": "USER_BOOT/PIP_UI_PLUS/PERKS/science.avi",
+        "url": "pipuiplus/assets/PERKS/science.avi"
+      },
+      {
+        "name": "USER_BOOT/PIP_UI_PLUS/PERKS/scrapper.avi",
+        "url": "pipuiplus/assets/PERKS/scrapper.avi"
+      },
+      {
+        "name": "USER_BOOT/PIP_UI_PLUS/PERKS/scrounger.avi",
+        "url": "pipuiplus/assets/PERKS/scrounger.avi"
+      },
+      {
+        "name": "USER_BOOT/PIP_UI_PLUS/PERKS/sneak.avi",
+        "url": "pipuiplus/assets/PERKS/sneak.avi"
+      },
+      {
+        "name": "USER_BOOT/PIP_UI_PLUS/PERKS/sniper.avi",
+        "url": "pipuiplus/assets/PERKS/sniper.avi"
+      },
+      {
+        "name": "USER_BOOT/PIP_UI_PLUS/PERKS/solar_powered.avi",
+        "url": "pipuiplus/assets/PERKS/solar_powered.avi"
+      },
+      {
+        "name": "USER_BOOT/PIP_UI_PLUS/PERKS/steady_aim.avi",
+        "url": "pipuiplus/assets/PERKS/steady_aim.avi"
+      },
+      {
+        "name": "USER_BOOT/PIP_UI_PLUS/PERKS/strong_back.avi",
+        "url": "pipuiplus/assets/PERKS/strong_back.avi"
+      },
+      {
+        "name": "USER_BOOT/PIP_UI_PLUS/PERKS/toughness.avi",
+        "url": "pipuiplus/assets/PERKS/toughness.avi"
+      },
+      {
+        "name": "USER_BOOT/PIP_UI_PLUS/PERKS/vans.avi",
+        "url": "pipuiplus/assets/PERKS/vans.avi"
+      },
+      {
+        "name": "USER_BOOT/PIP_UI_PLUS/PERKS/wasteland_whisperer.avi",
+        "url": "pipuiplus/assets/PERKS/wasteland_whisperer.avi"
+      },
+      {
+        "name": "USER_BOOT/PIP_UI_PLUS/SPECIAL/agility.avi",
+        "url": "pipuiplus/assets/SPECIAL/agility.avi"
+      },
+      {
+        "name": "USER_BOOT/PIP_UI_PLUS/SPECIAL/charisma.avi",
+        "url": "pipuiplus/assets/SPECIAL/charisma.avi"
+      },
+      {
+        "name": "USER_BOOT/PIP_UI_PLUS/SPECIAL/endurance.avi",
+        "url": "pipuiplus/assets/SPECIAL/endurance.avi"
+      },
+      {
+        "name": "USER_BOOT/PIP_UI_PLUS/SPECIAL/intelligence.avi",
+        "url": "pipuiplus/assets/SPECIAL/intelligence.avi"
+      },
+      {
+        "name": "USER_BOOT/PIP_UI_PLUS/SPECIAL/luck.avi",
+        "url": "pipuiplus/assets/SPECIAL/luck.avi"
+      },
+      {
+        "name": "USER_BOOT/PIP_UI_PLUS/SPECIAL/perception.avi",
+        "url": "pipuiplus/assets/SPECIAL/perception.avi"
+      },
+      {
+        "name": "USER_BOOT/PIP_UI_PLUS/SPECIAL/strength.avi",
+        "url": "pipuiplus/assets/SPECIAL/strength.avi"
+      }
+    ]
+  },
+  {
+    "id": "pipBoyNotes",
+    "name": "PipBoy Notes",
+    "author": "@gnargle",
+    "version": "1.0.0",
+    "description": "PipBoy Notes is a demo app intended to show off the new pipboy keyboard library, available for use for anyone in their apps.",
+    "icon": "pipBoyNotes/app.png",
+    "tags": "notes,writing,tool",
+    "type": "app",
+    "readme": "pipBoyNotes/README.md",
+    "storage": [
+      {
+        "name": "USER/pipBoyNotes.js",
+        "url": "pipBoyNotes/pipBoyNotes.min.js"
+      },
+      {
+        "name": "node_modules/pbkb.js",
+        "url": "pipBoyNotes/assets/pbkb.js"
+      }
+    ]
+  },
+  {
+    "id": "piptube",
+    "name": "PipTube",
+    "author": "@CodyTolene",
+    "version": "1.0.0",
+    "description": "PipTube lets Vault residents browse holotapes and loop training films directly in the Pip-Boy's DATA interface, calibrated for the approved 340x210 viewport.",
+    "icon": "piptube/assets/piptube.png",
+    "tags": "media,video",
+    "type": "app",
+    "readme": "piptube/README.md",
+    "custom": "",
+    "storage": [
+      {
+        "name": "USER/piptube.js",
+        "url": "piptube/app.min.js"
+      },
+      {
+        "name": "USER/PIPTUBE/piptube.min.js",
+        "url": "piptube/assets/piptube.min.js"
+      }
+    ]
+  },
+  {
+    "id": "settings",
+    "name": "Settings",
+    "author": "@rblakesley",
+    "version": "0.01",
+    "description": "Allows you to tweak settings on your Pip-boy",
+    "icon": "settings/app.png",
+    "tags": "system",
+    "type": "RAM",
+    "readme": "settings/README.md",
+    "custom": "settings/custom.html",
+    "customConnect": true,
+    "storage": []
+  },
+  {
+    "id": "statsdisplay",
+    "name": "Stats Display",
+    "author": "@gnargle",
+    "version": "2.5.1",
+    "description": "The SPECIAL/Skills/Perks menu for the Pip-Boy 3000 Mk V.",
+    "icon": "statsdisplay/app.png",
+    "tags": "system",
+    "type": "app",
+    "readme": "statsdisplay/README.md",
+    "storage": [
+      {
+        "name": "USER/statsdisplay.js",
+        "url": "statsdisplay/app.js"
+      },
+      {
+        "name": "USER/StatsDisplay/PERKS/ALL/actionboy.json",
+        "url": "statsdisplay/StatsDisplay/PERKS/ALL/actionboy.json"
+      },
+      {
+        "name": "USER/StatsDisplay/PERKS/ALL/actiongirl.json",
+        "url": "statsdisplay/StatsDisplay/PERKS/ALL/actiongirl.json"
+      },
+      {
+        "name": "USER/StatsDisplay/PERKS/ALL/blackwidow.json",
+        "url": "statsdisplay/StatsDisplay/PERKS/ALL/blackwidow.json"
+      },
+      {
+        "name": "USER/StatsDisplay/PERKS/ALL/cannibal.json",
+        "url": "statsdisplay/StatsDisplay/PERKS/ALL/cannibal.json"
+      },
+      {
+        "name": "USER/StatsDisplay/PERKS/ALL/cherchez.json",
+        "url": "statsdisplay/StatsDisplay/PERKS/ALL/cherchez.json"
+      },
+      {
+        "name": "USER/StatsDisplay/PERKS/ALL/childatheart.json",
+        "url": "statsdisplay/StatsDisplay/PERKS/ALL/childatheart.json"
+      },
+      {
+        "name": "USER/StatsDisplay/PERKS/ALL/comprehension.json",
+        "url": "statsdisplay/StatsDisplay/PERKS/ALL/comprehension.json"
+      },
+      {
+        "name": "USER/StatsDisplay/PERKS/ALL/computerwhiz.json",
+        "url": "statsdisplay/StatsDisplay/PERKS/ALL/computerwhiz.json"
+      },
+      {
+        "name": "USER/StatsDisplay/PERKS/ALL/confirmedbachelor.json",
+        "url": "statsdisplay/StatsDisplay/PERKS/ALL/confirmedbachelor.json"
+      },
+      {
+        "name": "USER/StatsDisplay/PERKS/ALL/educated.json",
+        "url": "statsdisplay/StatsDisplay/PERKS/ALL/educated.json"
+      },
+      {
+        "name": "USER/StatsDisplay/PERKS/ALL/entomologist.json",
+        "url": "statsdisplay/StatsDisplay/PERKS/ALL/entomologist.json"
+      },
+      {
+        "name": "USER/StatsDisplay/PERKS/ALL/fortunefinder.json",
+        "url": "statsdisplay/StatsDisplay/PERKS/ALL/fortunefinder.json"
+      },
+      {
+        "name": "USER/StatsDisplay/PERKS/ALL/foureyes.json",
+        "url": "statsdisplay/StatsDisplay/PERKS/ALL/foureyes.json"
+      },
+      {
+        "name": "USER/StatsDisplay/PERKS/ALL/friendofthenight.json",
+        "url": "statsdisplay/StatsDisplay/PERKS/ALL/friendofthenight.json"
+      },
+      {
+        "name": "USER/StatsDisplay/PERKS/ALL/heaveho.json",
+        "url": "statsdisplay/StatsDisplay/PERKS/ALL/heaveho.json"
+      },
+      {
+        "name": "USER/StatsDisplay/PERKS/ALL/hunter.json",
+        "url": "statsdisplay/StatsDisplay/PERKS/ALL/hunter.json"
+      },
+      {
+        "name": "USER/StatsDisplay/PERKS/ALL/intensetraining.json",
+        "url": "statsdisplay/StatsDisplay/PERKS/ALL/intensetraining.json"
+      },
+      {
+        "name": "USER/StatsDisplay/PERKS/ALL/ladykiller.json",
+        "url": "statsdisplay/StatsDisplay/PERKS/ALL/ladykiller.json"
+      },
+      {
+        "name": "USER/StatsDisplay/PERKS/ALL/missfortune.json",
+        "url": "statsdisplay/StatsDisplay/PERKS/ALL/missfortune.json"
+      },
+      {
+        "name": "USER/StatsDisplay/PERKS/ALL/mysteriousstranger.json",
+        "url": "statsdisplay/StatsDisplay/PERKS/ALL/mysteriousstranger.json"
+      },
+      {
+        "name": "USER/StatsDisplay/PERKS/ALL/radchild.json",
+        "url": "statsdisplay/StatsDisplay/PERKS/ALL/radchild.json"
+      },
+      {
+        "name": "USER/StatsDisplay/PERKS/ALL/rapidreload.json",
+        "url": "statsdisplay/StatsDisplay/PERKS/ALL/rapidreload.json"
+      },
+      {
+        "name": "USER/StatsDisplay/PERKS/ALL/retention.json",
+        "url": "statsdisplay/StatsDisplay/PERKS/ALL/retention.json"
+      },
+      {
+        "name": "USER/StatsDisplay/PERKS/ALL/runngun.json",
+        "url": "statsdisplay/StatsDisplay/PERKS/ALL/runngun.json"
+      },
+      {
+        "name": "USER/StatsDisplay/PERKS/ALL/stealthgirl.json",
+        "url": "statsdisplay/StatsDisplay/PERKS/ALL/stealthgirl.json"
+      },
+      {
+        "name": "USER/StatsDisplay/PERKS/ALL/swiftlearner.json",
+        "url": "statsdisplay/StatsDisplay/PERKS/ALL/swiftlearner.json"
+      },
+      {
+        "name": "USER/StatsDisplay/PERKS/ALL/weaponhandling.json",
+        "url": "statsdisplay/StatsDisplay/PERKS/ALL/weaponhandling.json"
+      },
+      {
+        "name": "USER/StatsDisplay/SKILLS/barter.json",
+        "url": "statsdisplay/StatsDisplay/SKILLS/barter.json"
+      },
+      {
+        "name": "USER/StatsDisplay/SKILLS/energyweapons.json",
+        "url": "statsdisplay/StatsDisplay/SKILLS/energyweapons.json"
+      },
+      {
+        "name": "USER/StatsDisplay/SKILLS/explosives.json",
+        "url": "statsdisplay/StatsDisplay/SKILLS/explosives.json"
+      },
+      {
+        "name": "USER/StatsDisplay/SKILLS/guns.json",
+        "url": "statsdisplay/StatsDisplay/SKILLS/guns.json"
+      },
+      {
+        "name": "USER/StatsDisplay/SKILLS/lockpicks.json",
+        "url": "statsdisplay/StatsDisplay/SKILLS/lockpicks.json"
+      },
+      {
+        "name": "USER/StatsDisplay/SKILLS/medicine.json",
+        "url": "statsdisplay/StatsDisplay/SKILLS/medicine.json"
+      },
+      {
+        "name": "USER/StatsDisplay/SKILLS/meleeweapons.json",
+        "url": "statsdisplay/StatsDisplay/SKILLS/meleeweapons.json"
+      },
+      {
+        "name": "USER/StatsDisplay/SKILLS/repair.json",
+        "url": "statsdisplay/StatsDisplay/SKILLS/repair.json"
+      },
+      {
+        "name": "USER/StatsDisplay/SKILLS/science.json",
+        "url": "statsdisplay/StatsDisplay/SKILLS/science.json"
+      },
+      {
+        "name": "USER/StatsDisplay/SKILLS/sneak.json",
+        "url": "statsdisplay/StatsDisplay/SKILLS/sneak.json"
+      },
+      {
+        "name": "USER/StatsDisplay/SKILLS/speech.json",
+        "url": "statsdisplay/StatsDisplay/SKILLS/speech.json"
+      },
+      {
+        "name": "USER/StatsDisplay/SKILLS/survival.json",
+        "url": "statsdisplay/StatsDisplay/SKILLS/survival.json"
+      },
+      {
+        "name": "USER/StatsDisplay/SKILLS/unarmed.json",
+        "url": "statsdisplay/StatsDisplay/SKILLS/unarmed.json"
+      },
+      {
+        "name": "USER/StatsDisplay/SPECIAL/aStrength.json",
+        "url": "statsdisplay/StatsDisplay/SPECIAL/aStrength.json"
+      },
+      {
+        "name": "USER/StatsDisplay/SPECIAL/bPerception.json",
+        "url": "statsdisplay/StatsDisplay/SPECIAL/bPerception.json"
+      },
+      {
+        "name": "USER/StatsDisplay/SPECIAL/cEndurance.json",
+        "url": "statsdisplay/StatsDisplay/SPECIAL/cEndurance.json"
+      },
+      {
+        "name": "USER/StatsDisplay/SPECIAL/dCharisma.json",
+        "url": "statsdisplay/StatsDisplay/SPECIAL/dCharisma.json"
+      },
+      {
+        "name": "USER/StatsDisplay/SPECIAL/eIntelligence.json",
+        "url": "statsdisplay/StatsDisplay/SPECIAL/eIntelligence.json"
+      },
+      {
+        "name": "USER/StatsDisplay/SPECIAL/fAgility.json",
+        "url": "statsdisplay/StatsDisplay/SPECIAL/fAgility.json"
+      },
+      {
+        "name": "USER/StatsDisplay/SPECIAL/gLuck.json",
+        "url": "statsdisplay/StatsDisplay/SPECIAL/gLuck.json"
+      }
+    ]
+  }
+]
