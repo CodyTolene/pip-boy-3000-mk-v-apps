@@ -19,7 +19,8 @@
         "name": "USER/CUSTOM_RADIO/customradio.min.js",
         "url": "customradio/assets/customradio.min.js"
       }
-    ]
+    ],
+    "storageOptional": []
   },
   {
     "id": "diceroller",
@@ -55,7 +56,8 @@
         "name": "USER/DICE_ROLLER/dice-throw.wav",
         "url": "diceroller/assets/dice-throw.wav"
       }
-    ]
+    ],
+    "storageOptional": []
   },
   {
     "id": "fileexplorer",
@@ -75,7 +77,8 @@
         "name": "USER/fileexplorer.js",
         "url": "fileexplorer/app.min.js"
       }
-    ]
+    ],
+    "storageOptional": []
   },
   {
     "id": "inventoryapp",
@@ -177,7 +180,8 @@
         "name": "DATA/Stimpak_img.js",
         "url": "inventoryapp/DATA/Stimpak_img.js"
       }
-    ]
+    ],
+    "storageOptional": []
   },
   {
     "id": "mtgtracker",
@@ -197,7 +201,8 @@
         "name": "USER/mtgtracker.js",
         "url": "mtgtracker/mtgtracker.min.js"
       }
-    ]
+    ],
+    "storageOptional": []
   },
   {
     "id": "pipBoyNotes",
@@ -221,7 +226,8 @@
         "name": "node_modules/pbkb.js",
         "url": "notes/assets/pbkb.js"
       }
-    ]
+    ],
+    "storageOptional": []
   },
   {
     "id": "piptube",
@@ -245,7 +251,8 @@
         "name": "USER/PIPTUBE/piptube.min.js",
         "url": "piptube/assets/piptube.min.js"
       }
-    ]
+    ],
+    "storageOptional": []
   },
   {
     "id": "statsdisplay",
@@ -451,6 +458,7 @@
         "name": "USER/StatsDisplay/SPECIAL/gLuck.json",
         "url": "statsdisplay/StatsDisplay/SPECIAL/gLuck.json"
       }
-    ]
+    ],
+    "storageOptional": []
   }
 ]

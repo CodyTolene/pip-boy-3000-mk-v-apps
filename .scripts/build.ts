@@ -21,6 +21,7 @@ type Metadata = {
   readme?: string;
   custom?: string;
   storage?: JsonValue[];
+  storageOptional?: JsonValue[];
   [key: string]: JsonValue | undefined;
 };
 
@@ -115,6 +116,7 @@ async function buildCatalog(directoryName: string): Promise<number> {
         readme: prefixAssetPath(metadata.readme, entryDir),
         custom: prefixAssetPath(metadata.custom, entryDir),
         storage: rewriteStorage(metadata.storage, entryDir),
+        storageOptional: rewriteStorage(metadata.storageOptional, entryDir),
       } as Metadata;
     }),
   );

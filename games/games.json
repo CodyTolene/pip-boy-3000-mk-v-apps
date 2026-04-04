@@ -17,7 +17,8 @@
         "name": "USER/asteroid.js",
         "url": "asteroid/app.js"
       }
-    ]
+    ],
+    "storageOptional": []
   },
   {
     "id": "asteropips",
@@ -37,7 +38,8 @@
         "name": "USER/AsteroPIPs.js",
         "url": "asteropips/AsteroPIPs.min.js"
       }
-    ]
+    ],
+    "storageOptional": []
   },
   {
     "id": "flappyroach",
@@ -81,7 +83,8 @@
         "name": "USER/FLAPPYROACH/StartGame.wav",
         "url": "flappyroach/assets/StartGame.wav"
       }
-    ]
+    ],
+    "storageOptional": []
   },
   {
     "id": "gameexample",
@@ -101,7 +104,8 @@
         "name": "USER/gameexample.js",
         "url": "gameexample/app.min.js"
       }
-    ]
+    ],
+    "storageOptional": []
   },
   {
     "id": "pipdoom",
@@ -161,7 +165,8 @@
         "name": "USER/PIP_DOOM/SHOOT.wav",
         "url": "pipdoom/assets/SHOOT.wav"
       }
-    ]
+    ],
+    "storageOptional": []
   },
   {
     "id": "pippong",
@@ -181,7 +186,8 @@
         "name": "USER/pippong.js",
         "url": "pippong/PipPong.min.js"
       }
-    ]
+    ],
+    "storageOptional": []
   },
   {
     "id": "pipsnake",
@@ -201,7 +207,8 @@
         "name": "USER/pipsnake.js",
         "url": "pipsnake/PipSnake.min.js"
       }
-    ]
+    ],
+    "storageOptional": []
   },
   {
     "id": "pip2048",
@@ -221,7 +228,8 @@
         "name": "USER/Pip2048.js",
         "url": "pip2048/Pip2048.min.js"
       }
-    ]
+    ],
+    "storageOptional": []
   },
   {
     "id": "piptactoe",
@@ -241,7 +249,8 @@
         "name": "USER/PipTacToe.js",
         "url": "piptactoe/PipTacToe.js"
       }
-    ]
+    ],
+    "storageOptional": []
   },
   {
     "id": "piptris",
@@ -284,10 +293,32 @@
       {
         "name": "USER/PIPTRIS/radioactive.json",
         "url": "piptris/assets/radioactive.json"
+      }
+    ],
+    "storageOptional": [
+      {
+        "label": "Big Band Swing (Music)",
+        "name": "USER/PIPTRIS/piptris-big-band-swing.wav",
+        "sizeKB": 826,
+        "url": "piptris/assets/piptris-big-band-swing.wav"
       },
       {
+        "label": "Electro Swing (Music)",
+        "name": "USER/PIPTRIS/piptris-electro-swing.wav",
+        "sizeKB": 1150,
+        "url": "piptris/assets/piptris-electro-swing.wav"
+      },
+      {
+        "label": "Symphony (Music)",
         "name": "USER/PIPTRIS/piptris-symphony.wav",
+        "sizeKB": 1614,
         "url": "piptris/assets/piptris-symphony.wav"
+      },
+      {
+        "label": "Whimsical (Music)",
+        "name": "USER/PIPTRIS/piptris-whimsical.wav",
+        "sizeKB": 1635,
+        "url": "piptris/assets/piptris-whimsical.wav"
       }
     ]
   },
@@ -317,7 +348,8 @@
         "name": "USER/PORTA_HACK/STARTHACK.avi",
         "url": "portahack/assets/STARTHACK.avi"
       }
-    ]
+    ],
+    "storageOptional": []
   },
   {
     "id": "vaultbreaker",
@@ -335,6 +367,7 @@
         "name": "USER/vaultbreaker.js",
         "url": "vaultbreaker/VaultBreaker.js"
       }
-    ]
+    ],
+    "storageOptional": []
   }
 ]
