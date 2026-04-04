@@ -13,7 +13,8 @@
 
 ### Important
 
-If Pip UI+ doesn't work, or is finicky in any way, simply restart before going to Pip UI+.
+If Pip UI+ doesn't work, or is finicky in any way, simply restart before going
+to Pip UI+.
 
 ## Description
 

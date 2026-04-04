@@ -16,7 +16,10 @@
     { "name": "USER/PIPTRIS/block.json", "url": "assets/block.json" },
     { "name": "USER/PIPTRIS/gear.json", "url": "assets/gear.json" },
     { "name": "USER/PIPTRIS/nuke.json", "url": "assets/nuke.json" },
-    { "name": "USER/PIPTRIS/radioactive.json", "url": "assets/radioactive.json" }
+    {
+      "name": "USER/PIPTRIS/radioactive.json",
+      "url": "assets/radioactive.json"
+    }
   ],
   "storageOptional": [
     {
