@@ -35,6 +35,7 @@
 - [Iteration History](#iterations)
 - [Prerequisites](#prerequisites)
 - [Create a New App or Game](#create-a-new-app-or-game)
+- [Testing](#testing)
 - [Contributing](#contributing)
 - [Scripts](#scripts)
 - [License](#license)
@@ -67,6 +68,9 @@ For historical purposes, previous repositories have been kept online so others
 can reference them if needed. Check them out below if you're interested in the
 history of this project!
 
+<details>
+  <summary>Click to expand the iteration history</summary>
+
 ### First Iteration (March, 2025)
 
 The custom apps repository before the release of the official app-loader and
@@ -90,6 +94,7 @@ contributors to add their apps and games to [pip-boy.com](https://pip-boy.com).
 This version shows contributor names in GitHub since it's not a fork.
 
 - https://github.com/CodyTolene/pip-boy-3000-mk-v-apps
+</details>
 
 <p align="right">[ <a href="#index">Index</a> ]</p>
 
@@ -136,6 +141,19 @@ README.md
 <!---------------------------------------------------------------------------->
 <!---------------------------------------------------------------------------->
 
+## Testing <a name="testing"></a>
+
+To test your app or game, you can use the official app-loader provided by The
+Wand Company here:
+
+- https://github.com/thewandcompany/pip-boy
+
+<p align="right">[ <a href="#index">Index</a> ]</p>
+
+<!---------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------->
+
 ## Contributing <a name="contributing"></a>
 
 1.  Clone the repository and create a new branch for your changes:
@@ -164,6 +182,10 @@ README.md
     git commit -m "Your commit message"
     ```
 
+    > ![info][img-info] You can minify your JavaScript files before committing
+    > by running `npm run min` or `npm run min:watch` to automatically minify on
+    > file changes. See the [Scripts](#scripts) section below for more details.
+
 5.  Push your changes:
 
     ```sh
@@ -186,10 +208,12 @@ README.md
 npm run <script>
 ```
 
-| Script   | Description                          |
-| -------- | ------------------------------------ |
-| `build`  | Builds the apps and games list.      |
-| `format` | Formats the codebase using Prettier. |
+| Script      | Description                                                           |
+| ----------- | --------------------------------------------------------------------- |
+| `build`     | Builds the apps and games list.                                       |
+| `format`    | Formats the codebase using Prettier.                                  |
+| `min`       | Minifies your JavaScript files.                                       |
+| `min:watch` | Watches for changes and minifies your JavaScript files automatically. |
 
 <p align="right">[ <a href="#index">Index</a> ]</p>
 
