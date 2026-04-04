@@ -30,7 +30,7 @@
     "description": "Toss tabletop dice: D2, D4, D6, D8, D10, D12, D20, and D100. War never changes, but your roll might!",
     "icon": "diceroller/assets/diceroller.png",
     "previews": [
-      "diceroller.mp4"
+      "diceroller/diceroller.mp4"
     ],
     "tags": "game,tool",
     "type": "app",
@@ -67,7 +67,7 @@
     "description": "Seamlessly browse your system's directories and view pre-approved images, videos, and text files. Designed for clarity, built for the future, just the way Vault-Tec intended.",
     "icon": "fileexplorer/fileexplorer.png",
     "previews": [
-      "fileexplorer.mp4"
+      "fileexplorer/fileexplorer.mp4"
     ],
     "tags": "media,tool",
     "type": "app",
@@ -191,7 +191,7 @@
     "description": "A Pip-powered life counter for Magic the Gathering with standard 20 life games and 40/21 life Commander games for 1-4 players. 1-2 players recommended.",
     "icon": "mtgtracker/mtgtracker.png",
     "previews": [
-      "mtgtracker.mp4"
+      "mtgtracker/mtgtracker.mp4"
     ],
     "tags": "game,tool",
     "type": "app",
@@ -212,7 +212,7 @@
     "description": "PipBoy Notes is a demo app intended to show off the new pipboy keyboard library, available for use for anyone in their apps.",
     "icon": "notes/app.png",
     "previews": [
-      "notes.mp4"
+      "notes/notes.mp4"
     ],
     "tags": "notes,writing,tool",
     "type": "app",
@@ -237,7 +237,7 @@
     "description": "PipTube lets Vault residents browse holotapes and loop training films directly in the Pip-Boy's DATA interface, calibrated for the approved 340x210 viewport.",
     "icon": "piptube/assets/piptube.png",
     "previews": [
-      "piptube.mp4"
+      "piptube/piptube.mp4"
     ],
     "tags": "media,video",
     "type": "app",

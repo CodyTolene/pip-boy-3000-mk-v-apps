@@ -7,7 +7,7 @@
     "description": "An Asteroids Game",
     "icon": "asteroid/app.png",
     "previews": [
-      "asteroid.mp4"
+      "asteroid/asteroid.mp4"
     ],
     "tags": "game",
     "type": "app",
@@ -28,7 +28,7 @@
     "description": "AsteroPIPs is a simple game where you control a spaceship to shoot and avoid space rocks.",
     "icon": "asteropips/asteropips.png",
     "previews": [
-      "asteropips.mp4"
+      "asteropips/asteropips.mp4"
     ],
     "tags": "game",
     "type": "app",
@@ -49,7 +49,7 @@
     "description": "A Fallout inspired version of the popular Flappy Bird game.",
     "icon": "flappyroach/assets/flappyroach.png",
     "previews": [
-      "flappyroach.mp4"
+      "flappyroach/flappyroach.mp4"
     ],
     "tags": "game",
     "type": "app",
@@ -94,7 +94,7 @@
     "description": "A game example that you can use as a template for your own game.",
     "icon": "gameexample/gameexample.png",
     "previews": [
-      "gameexample.mp4"
+      "gameexample/gameexample.mp4"
     ],
     "tags": "game,experiment",
     "type": "app",
@@ -115,7 +115,7 @@
     "description": "A DOOM inspired RPG engine for the Pip-Boy 3000 Mk V.",
     "icon": "pipdoom/assets/pipdoom.png",
     "previews": [
-      "pipdoom.mp4"
+      "pipdoom/pipdoom.mp4"
     ],
     "tags": "game",
     "type": "app",
@@ -176,7 +176,7 @@
     "description": "Pip-Pong is a simple game where you control a paddle that hits a ball back and forth.",
     "icon": "pippong/pippong.png",
     "previews": [
-      "pippong.mp4"
+      "pippong/pippong.mp4"
     ],
     "tags": "game",
     "type": "app",
@@ -197,7 +197,7 @@
     "description": "Guide your rad-snake to snacks while avoiding self-inflicted disaster. Good for low-risk simulation recommended by Vault-Tec for maintaining hand-eye coordination during extended shelter stays.",
     "icon": "pipsnake/pipsnake.png",
     "previews": [
-      "pipsnake.mp4"
+      "pipsnake/pipsnake.mp4"
     ],
     "tags": "game",
     "type": "app",
@@ -218,7 +218,7 @@
     "description": "A classic 2048 game.",
     "icon": "pip2048/pip2048.png",
     "previews": [
-      "pip2048.mp4"
+      "pip2048/pip2048.mp4"
     ],
     "tags": "game",
     "type": "app",
@@ -239,7 +239,7 @@
     "description": "A fun Tic-Tac-Toe game for the Pip-Boy 3000 Mk V.",
     "icon": "piptactoe/piptactoe.png",
     "previews": [
-      "piptactoe.mp4"
+      "piptactoe/piptactoe.mp4"
     ],
     "tags": "game",
     "type": "app",
@@ -260,7 +260,7 @@
     "description": "Stack, rotate, and clear falling blocks in this Tetris inspired mini-game. Simple, addictive, and perfect for idle moments between scavenging runs or stimpak breaks.",
     "icon": "piptris/assets/piptris.png",
     "previews": [
-      "piptris.mp4"
+      "piptris/piptris.mp4"
     ],
     "tags": "game",
     "type": "app",
@@ -330,7 +330,7 @@
     "description": "A recreation of the in-game hacking sequence, played right from your wrist!",
     "icon": "portahack/assets/portahack.png",
     "previews": [
-      "portahack.mp4"
+      "portahack/portahack.mp4"
     ],
     "tags": "game",
     "type": "app",

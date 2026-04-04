@@ -16,10 +16,10 @@ type Metadata = {
   version?: string;
   description?: string;
   icon?: string;
+  previews?: string[];
   tags?: string;
   type?: string;
   readme?: string;
-  custom?: string;
   storage?: JsonValue[];
   storageOptional?: JsonValue[];
   [key: string]: JsonValue | undefined;
@@ -113,8 +113,10 @@ async function buildCatalog(directoryName: string): Promise<number> {
       return {
         ...metadata,
         icon: prefixAssetPath(metadata.icon, entryDir),
+        previews: metadata.previews?.map((preview) =>
+          prefixAssetPath(preview, entryDir),
+        ),
         readme: prefixAssetPath(metadata.readme, entryDir),
-        custom: prefixAssetPath(metadata.custom, entryDir),
         storage: rewriteStorage(metadata.storage, entryDir),
         storageOptional: rewriteStorage(metadata.storageOptional, entryDir),
       } as Metadata;
