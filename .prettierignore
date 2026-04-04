@@ -7,8 +7,8 @@
 !.vscode/
 !README.md
 !package.json
-# !apps/
-# !games/
+!apps/
+!games/
 
 # Re-ignore
 **/*.min.css

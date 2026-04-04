@@ -15,6 +15,7 @@ function Piptris() {
   const BLOCK_IMAGE_PATH = 'USER/PIPTRIS/block.json';
   const CONFIG_PATH = 'USER/PIPTRIS/piptris.json';
   const GEAR_IMAGE_PATH = 'USER/PIPTRIS/gear.json';
+  const INFO_PATH = 'APPINFO/piptris.info';
   const NUKE_IMAGE_PATH = 'USER/PIPTRIS/nuke.json';
   const RADIOACTIVE_IMAGE_PATH = 'USER/PIPTRIS/radioactive.json';
 
@@ -750,12 +751,25 @@ function Piptris() {
       if (!file) throw new Error('Config file missing');
       let data = JSON.parse(file);
       highScore = data.highScore || 0;
-      musicList = data.music || [];
     } catch (e) {
       // Error loading config
       console.log(e);
       highScore = 0;
       saveConfig();
+    }
+
+    try {
+      let infoFile = fs.readFile(INFO_PATH);
+      if (!infoFile) throw new Error('Info file missing');
+      let info = JSON.parse(infoFile);
+      let files = (info.files || '').split(',');
+      musicList = files.filter(function (f) {
+        return f.slice(-4).toLowerCase() === '.wav';
+      });
+    } catch (e) {
+      // Error loading info file
+      console.log(e);
+      musicList = [];
     }
   }
 
@@ -1019,7 +1033,6 @@ function Piptris() {
   function saveConfig() {
     let data = {
       highScore: highScore,
-      music: musicList,
     };
     try {
       fs.writeFile(CONFIG_PATH, JSON.stringify(data));

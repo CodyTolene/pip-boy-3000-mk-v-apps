@@ -11,7 +11,10 @@
   "readme": "README.md",
   "storage": [
     { "name": "USER/portahack.js", "url": "app.min.js" },
-    { "name": "USER/PORTA_HACK/portahack.min.js", "url": "assets/portahack.min.js" },
+    {
+      "name": "USER/PORTA_HACK/portahack.min.js",
+      "url": "assets/portahack.min.js"
+    },
     { "name": "USER/PORTA_HACK/STARTHACK.avi", "url": "assets/STARTHACK.avi" }
   ],
   "storageOptional": []

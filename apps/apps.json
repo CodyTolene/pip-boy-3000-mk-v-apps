@@ -223,7 +223,7 @@
         "url": "notes/pipBoyNotes.min.js"
       },
       {
-        "name": "node_modules/pbkb.js",
+        "name": "node_modules/pbkb.min.js",
         "url": "notes/assets/pbkb.js"
       }
     ],

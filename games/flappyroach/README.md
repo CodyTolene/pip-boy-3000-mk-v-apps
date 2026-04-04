@@ -2,7 +2,7 @@
 
 ### Info
 
-**Author:** 
+**Author:**
 
 - @JLDenson (https://github.com/JLDenson)
 

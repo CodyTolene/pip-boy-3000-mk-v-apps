@@ -1,512 +1,549 @@
 {
-// ====== Flappy Roach (A Flappy-ish Wasteland Game) ======
-// ====== A JS learning experience for Jim D. ======
-// ====== Thanks to @Code & @Darrian/@Rikkuness for all the advice, suggestions, tips, and tricks! ======
-// ====== Left Knob-press / Radio Knob-press flaps/restarts game, Torch pauses, Power exits ======
-//
-if (Pip.removeSubmenu) Pip.removeSubmenu();
-delete Pip.removeSubmenu;
-if (Pip.remove) Pip.remove();
-delete Pip.remove;
+  // ====== Flappy Roach (A Flappy-ish Wasteland Game) ======
+  // ====== A JS learning experience for Jim D. ======
+  // ====== Thanks to @Code & @Darrian/@Rikkuness for all the advice, suggestions, tips, and tricks! ======
+  // ====== Left Knob-press / Radio Knob-press flaps/restarts game, Torch pauses, Power exits ======
+  //
+  if (Pip.removeSubmenu) Pip.removeSubmenu();
+  delete Pip.removeSubmenu;
+  if (Pip.remove) Pip.remove();
+  delete Pip.remove;
 
-let C = (typeof bC !== "undefined") ? bC : g,
- fs = require("fs"),
- HS_PATH = "/USER/FLAPPYROACH/flappy_hs",
- inTitle = true,
- paused = false,
- menuItems = ["RESUME GAME", "RESTART GAME", "QUIT (REBOOT)"],
- menuIndex = 0,
- W = C.getWidth(),
- H = C.getHeight(),
- finalScore = 0,
- pipes = [],
- score = 0,
- gameOver = false,
- loopId = null,
- powerWatchId = null,
- playWasDown = false,
- knob1WasDown = false,
- frameCount = 0,
- roachFlapT = 0,
- roachTilt  = 0,
- tOverSound = null,
- tImpactClear = null,
- lastFlapSoundT = 0,
- impactFX = null,
- showGameOverUI = true,
- inputLockedUntil = 0,
- GRAVITY = 0.4,
- FLAP = -5,
- PIPE_SPEED = 2.5,
- PIPE_GAP = 40,
- PIPE_WIDTH = 15,
- PIPE_SPACING = 180,
- SND_FLAP  = "/USER/FLAPPYROACH/BeetleFlying.wav",
- SND_HIT  = "/USER/FLAPPYROACH/HitGround.wav",
- SND_OVER  = "/USER/FLAPPYROACH/GameOver.wav",
- SND_SPLAT   = "/USER/FLAPPYROACH/SplatOnPipe.wav",
- SND_START = "/USER/FLAPPYROACH/StartGame.wav",
-// New Floor and Ceiling lines
- CEIL_H  = 8,  // pixels
- FLOOR_H = 10,  // pixels
-// Play area bounds (Flappy Roach must stay inside these)
- EDGE_PAD = 0, // Change this value to adjust boundary bezel gap
- PLAY_TOP = CEIL_H,
- PLAY_BOT = H - FLOOR_H;
+  let C = typeof bC !== 'undefined' ? bC : g,
+    fs = require('fs'),
+    HS_PATH = '/USER/FLAPPYROACH/flappy_hs',
+    inTitle = true,
+    paused = false,
+    menuItems = ['RESUME GAME', 'RESTART GAME', 'QUIT (REBOOT)'],
+    menuIndex = 0,
+    W = C.getWidth(),
+    H = C.getHeight(),
+    finalScore = 0,
+    pipes = [],
+    score = 0,
+    gameOver = false,
+    loopId = null,
+    powerWatchId = null,
+    playWasDown = false,
+    knob1WasDown = false,
+    frameCount = 0,
+    roachFlapT = 0,
+    roachTilt = 0,
+    tOverSound = null,
+    tImpactClear = null,
+    lastFlapSoundT = 0,
+    impactFX = null,
+    showGameOverUI = true,
+    inputLockedUntil = 0,
+    GRAVITY = 0.4,
+    FLAP = -5,
+    PIPE_SPEED = 2.5,
+    PIPE_GAP = 40,
+    PIPE_WIDTH = 15,
+    PIPE_SPACING = 180,
+    SND_FLAP = '/USER/FLAPPYROACH/BeetleFlying.wav',
+    SND_HIT = '/USER/FLAPPYROACH/HitGround.wav',
+    SND_OVER = '/USER/FLAPPYROACH/GameOver.wav',
+    SND_SPLAT = '/USER/FLAPPYROACH/SplatOnPipe.wav',
+    SND_START = '/USER/FLAPPYROACH/StartGame.wav',
+    // New Floor and Ceiling lines
+    CEIL_H = 8, // pixels
+    FLOOR_H = 10, // pixels
+    // Play area bounds (Flappy Roach must stay inside these)
+    EDGE_PAD = 0, // Change this value to adjust boundary bezel gap
+    PLAY_TOP = CEIL_H,
+    PLAY_BOT = H - FLOOR_H;
 
-// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+  // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 
-function drawTitleScreen() {
-  C.clear();
-  C.setFontAlign(-1, -1);
-  C.setFont("6x8", 2);
-  drawCentered("FLAPPY ROACH", Math.floor(H * 0.25));
-  C.setFont("6x8", 1);
-  drawCentered("Knob1 or Radio PLAY", Math.floor(H * 0.52));
-  drawCentered("to START", Math.floor(H * 0.60));
-  drawCentered("Torch: pause menu", Math.floor(H * 0.78));
-  flushScreen();
-}
-
-function startRun() {
-  inTitle = false;
-  gameOver = false;
-  paused = false;
-  // give player a moment of stability
-  bird.y = H / 2;
-  bird.vy = 0;
-  pipes = [];
-  newPipe(); // or newPipe(W) depending on your current version
-  playSound(SND_START); // optional, if you want start sound here
-}
-
-function playSound(name) {
-  try {
-    Pip.audioStop();
-    Pip.audioStart(name);
-  } catch (e) {
-    // Fail silently if audio is unavailable
-    // console.log("Audio error:", e);
+  function drawTitleScreen() {
+    C.clear();
+    C.setFontAlign(-1, -1);
+    C.setFont('6x8', 2);
+    drawCentered('FLAPPY ROACH', Math.floor(H * 0.25));
+    C.setFont('6x8', 1);
+    drawCentered('Knob1 or Radio PLAY', Math.floor(H * 0.52));
+    drawCentered('to START', Math.floor(H * 0.6));
+    drawCentered('Torch: pause menu', Math.floor(H * 0.78));
+    flushScreen();
   }
-}
 
-function playFlapSound() {
-  let now = getTime() * 1000; // ms
-  if (now - lastFlapSoundT < 120) return; // 120ms minimum gap
-  lastFlapSoundT = now;
-  playSound(SND_FLAP);
-}
-
-function drawSplat(x, y, s, t) {
-  // x,y: center-ish, s: size scale, t: 0..1 progress
-  let r = Math.max(2, s + Math.floor(t * 6));
-  // central blob
-  C.fillRect(x - r, y - r, x + r, y + r);
-  // droplets (fixed pattern, grows a bit with t)
-  let d = r + 2;
-  C.fillRect(x - d, y - 1, x - d + 2, y + 1);
-  C.fillRect(x + d - 2, y - 1, x + d, y + 1);
-  C.fillRect(x - 1, y - d, x + 1, y - d + 2);
-  C.fillRect(x - 1, y + d - 2, x + 1, y + d);
-  // diagonals
-  C.fillRect(x - d, y - d, x - d + 2, y - d + 2);
-  C.fillRect(x + d - 2, y - d, x + d, y - d + 2);
-  C.fillRect(x - d, y + d - 2, x - d + 2, y + d);
-  C.fillRect(x + d - 2, y + d - 2, x + d, y + d);
-  // optional little “crack” line for pipe hit
-  if (impactFX && impactFX.kind === "HIT") {
-    C.drawLine(x - r - 2, y, x + r + 2, y);
+  function startRun() {
+    inTitle = false;
+    gameOver = false;
+    paused = false;
+    // give player a moment of stability
+    bird.y = H / 2;
+    bird.vy = 0;
+    pipes = [];
+    newPipe(); // or newPipe(W) depending on your current version
+    playSound(SND_START); // optional, if you want start sound here
   }
-}
 
-function flapAction() {
-  // Ignore all input during lockout window
-  if (getTime() < inputLockedUntil) return;
-  // Pause menu: press selects
-  if (paused && !gameOver) {
-    pauseSelect();
-    return;
+  function playSound(name) {
+    try {
+      Pip.audioStop();
+      Pip.audioStart(name);
+    } catch (e) {
+      // Fail silently if audio is unavailable
+      // console.log("Audio error:", e);
+    }
   }
-  if (inTitle) { startRun(); return; }
-  if (gameOver) { resetGame(); startRun(); return; }
-  bird.vy = FLAP;
-  roachFlapT = 6;
-  roachTilt = -1;
-  playFlapSound();
-}
 
-// * * * * * * * * * * * * * * * Save High Score * * * * * * * * * * * * * * * * * *
-function saveHighScoreIfNeeded(s) {
+  function playFlapSound() {
+    let now = getTime() * 1000; // ms
+    if (now - lastFlapSoundT < 120) return; // 120ms minimum gap
+    lastFlapSoundT = now;
+    playSound(SND_FLAP);
+  }
+
+  function drawSplat(x, y, s, t) {
+    // x,y: center-ish, s: size scale, t: 0..1 progress
+    let r = Math.max(2, s + Math.floor(t * 6));
+    // central blob
+    C.fillRect(x - r, y - r, x + r, y + r);
+    // droplets (fixed pattern, grows a bit with t)
+    let d = r + 2;
+    C.fillRect(x - d, y - 1, x - d + 2, y + 1);
+    C.fillRect(x + d - 2, y - 1, x + d, y + 1);
+    C.fillRect(x - 1, y - d, x + 1, y - d + 2);
+    C.fillRect(x - 1, y + d - 2, x + 1, y + d);
+    // diagonals
+    C.fillRect(x - d, y - d, x - d + 2, y - d + 2);
+    C.fillRect(x + d - 2, y - d, x + d, y - d + 2);
+    C.fillRect(x - d, y + d - 2, x - d + 2, y + d);
+    C.fillRect(x + d - 2, y + d - 2, x + d, y + d);
+    // optional little “crack” line for pipe hit
+    if (impactFX && impactFX.kind === 'HIT') {
+      C.drawLine(x - r - 2, y, x + r + 2, y);
+    }
+  }
+
+  function flapAction() {
+    // Ignore all input during lockout window
+    if (getTime() < inputLockedUntil) return;
+    // Pause menu: press selects
+    if (paused && !gameOver) {
+      pauseSelect();
+      return;
+    }
+    if (inTitle) {
+      startRun();
+      return;
+    }
+    if (gameOver) {
+      resetGame();
+      startRun();
+      return;
+    }
+    bird.vy = FLAP;
+    roachFlapT = 6;
+    roachTilt = -1;
+    playFlapSound();
+  }
+
+  // * * * * * * * * * * * * * * * Save High Score * * * * * * * * * * * * * * * * * *
+  function saveHighScoreIfNeeded(s) {
     if (s > highScore) {
       highScore = s;
-	  fs.writeFileSync(HS_PATH, String(s));
+      fs.writeFileSync(HS_PATH, String(s));
     }
-}
+  }
 
-// * * * * * * * * * * * * * * * Load High Score * * * * * * * * * * * * * * * * * *
-function loadHighScore() {
-  try {
-    return parseInt(fs.readFileSync(HS_PATH) || "0", 10);
-  } catch (e) {
-    if (e && e.toString().indexOf("NO_FILE") >= 0) {
-      fs.writeFileSync(HS_PATH, "0");
-      return 0;
+  // * * * * * * * * * * * * * * * Load High Score * * * * * * * * * * * * * * * * * *
+  function loadHighScore() {
+    try {
+      return parseInt(fs.readFileSync(HS_PATH) || '0', 10);
+    } catch (e) {
+      if (e && e.toString().indexOf('NO_FILE') >= 0) {
+        fs.writeFileSync(HS_PATH, '0');
+        return 0;
+      }
+      throw e;
     }
-    throw e;
   }
-}
 
-let highScore = loadHighScore();
+  let highScore = loadHighScore();
 
-function togglePause() {
-  paused = !paused;
-  if (paused) {
-    menuIndex = 0;  // keep this!
-    // Small input lock so the pause button press
-    // doesn’t instantly trigger a menu selection
-    inputLockedUntil = getTime() + 0.15;
-    // Reset press-state tracking so a held button
-    // doesn't count as a new press
-    knob1WasDown = (typeof KNOB1_BTN !== "undefined") ? KNOB1_BTN.read() : false;
-    playWasDown  = (typeof BTN_PLAY  !== "undefined") ? BTN_PLAY.read()  : false;
+  function togglePause() {
+    paused = !paused;
+    if (paused) {
+      menuIndex = 0; // keep this!
+      // Small input lock so the pause button press
+      // doesn’t instantly trigger a menu selection
+      inputLockedUntil = getTime() + 0.15;
+      // Reset press-state tracking so a held button
+      // doesn't count as a new press
+      knob1WasDown =
+        typeof KNOB1_BTN !== 'undefined' ? KNOB1_BTN.read() : false;
+      playWasDown = typeof BTN_PLAY !== 'undefined' ? BTN_PLAY.read() : false;
+    }
   }
-}
 
-function pauseSelect() {
-  let choice = menuItems[menuIndex];
-  if (choice === "RESUME GAME") {
+  function pauseSelect() {
+    let choice = menuItems[menuIndex];
+    if (choice === 'RESUME GAME') {
+      paused = false;
+    } else if (choice === 'RESTART GAME') {
+      paused = false;
+      resetGame();
+      startRun && startRun(); // if you have startRun
+      // or just reset+inTitle=true depending on your flow
+    } else if (choice.indexOf('QUIT') === 0) {
+      // Save score, then reboot (reliable “exit”)
+      try {
+        saveHighScoreIfNeeded(score);
+      } catch (e) {}
+      try {
+        C.clear();
+        flushScreen();
+      } catch (e) {}
+      E.reboot();
+    }
+  }
+
+  function flushScreen() {
+    if (C && C.flip) return C.flip();
+    if (C && C.flush) return C.flush();
+    if (C && C.update) return C.update();
+    if (global.LCD && LCD.flip) return LCD.flip();
+  }
+
+  function newPipe() {
+    // Playable lane height (between ceiling and floor bars)
+    const laneTop = PLAY_TOP;
+    const laneBot = PLAY_BOT;
+    const laneH = laneBot - laneTop;
+    // Logic is based on a lane now
+    let gap = Math.min(PIPE_GAP, laneH - 20); // 20 is analogous to your old "H - 30" safety
+    if (gap < 10) gap = 10; // safety: don't allow absurdly tiny gaps
+    let margin = 10; // same feel as before
+    let usable = laneH - gap - margin * 2;
+    let gapY = laneTop + margin + Math.random() * (usable > 0 ? usable : 1);
+    pipes.push({ x: W, gapY: gapY, scored: false, gap: gap });
+  }
+
+  function resetGame() {
+    W = C.getWidth();
+    H = C.getHeight();
     paused = false;
-  } else if (choice === "RESTART GAME") {
-    paused = false;
-    resetGame();
-    startRun && startRun(); // if you have startRun
-    // or just reset+inTitle=true depending on your flow
-  } else if (choice.indexOf("QUIT") === 0) {
-    // Save score, then reboot (reliable “exit”)
-    try { saveHighScoreIfNeeded(score); } catch (e) {}
-    try { C.clear(); flushScreen(); } catch (e) {}
-    E.reboot();
-  }
-}
-
-function flushScreen() {
-  if (C && C.flip) return C.flip();
-  if (C && C.flush) return C.flush();
-  if (C && C.update) return C.update();
-  if (global.LCD && LCD.flip) return LCD.flip();
-}
-
-function newPipe() {
-  // Playable lane height (between ceiling and floor bars)
-  const laneTop = PLAY_TOP;
-  const laneBot = PLAY_BOT;
-  const laneH   = laneBot - laneTop;
-  // Logic is based on a lane now
-  let gap = Math.min(PIPE_GAP, laneH - 20);   // 20 is analogous to your old "H - 30" safety
-  if (gap < 10) gap = 10;                    // safety: don't allow absurdly tiny gaps
-  let margin = 10;                           // same feel as before
-  let usable = laneH - gap - margin * 2;
-  let gapY = laneTop + margin + Math.random() * (usable > 0 ? usable : 1);
-  pipes.push({ x: W, gapY: gapY, scored: false, gap: gap });
-}
-
-function resetGame() {
-  W = C.getWidth();
-  H = C.getHeight();
-  paused = false;
-  gameOver = false;
-  bird = { x: Math.floor(W * 0.25), y: H / 2, vy: 0, size: 6 };
-  pipes = [];
-  score = 0;
-  inTitle = true; // <--
-}
-
-// Floor & Ceiling
-function drawBounds() {
-  // Ceiling
-  C.setColor(0,0,0);
-  C.fillRect(0, 0, W-1, PLAY_TOP-1);
-  // Floor
-  C.fillRect(0, PLAY_BOT, W-1, H-1);
-  // Optional: thin bright edge line so it "reads" clearly
-  C.setColor(1,1,1);
-  C.drawLine(0, PLAY_TOP-1, W-1, PLAY_TOP-1);
-  C.drawLine(0, PLAY_BOT,   W-1, PLAY_BOT);
-}
-
-function update() {
-  if (!pipes) pipes = []; // safety
-  // --- Always poll inputs FIRST (even on score/title/pause screens) ---
-  // Radio PLAY
-  if (typeof BTN_PLAY !== "undefined") {
-    let down = BTN_PLAY.read();
-    if (down && !playWasDown) flapAction();
-    playWasDown = down;
+    gameOver = false;
+    bird = { x: Math.floor(W * 0.25), y: H / 2, vy: 0, size: 6 };
+    pipes = [];
+    score = 0;
+    inTitle = true; // <--
   }
 
-  // Knob1 press (hardware)
-  if (typeof KNOB1_BTN !== "undefined") {
-    let down = KNOB1_BTN.read();
-    if (down && !knob1WasDown) flapAction();
-    knob1WasDown = down;
+  // Floor & Ceiling
+  function drawBounds() {
+    // Ceiling
+    C.setColor(0, 0, 0);
+    C.fillRect(0, 0, W - 1, PLAY_TOP - 1);
+    // Floor
+    C.fillRect(0, PLAY_BOT, W - 1, H - 1);
+    // Optional: thin bright edge line so it "reads" clearly
+    C.setColor(1, 1, 1);
+    C.drawLine(0, PLAY_TOP - 1, W - 1, PLAY_TOP - 1);
+    C.drawLine(0, PLAY_BOT, W - 1, PLAY_BOT);
   }
 
-  // Now we can bail out of motion/physics while on other screens
-  if (inTitle) return;
-  if (gameOver || paused) return;
+  function update() {
+    if (!pipes) pipes = []; // safety
+    // --- Always poll inputs FIRST (even on score/title/pause screens) ---
+    // Radio PLAY
+    if (typeof BTN_PLAY !== 'undefined') {
+      let down = BTN_PLAY.read();
+      if (down && !playWasDown) flapAction();
+      playWasDown = down;
+    }
 
-  // Flap animation countdown
-  if (roachFlapT > 0) roachFlapT--;
+    // Knob1 press (hardware)
+    if (typeof KNOB1_BTN !== 'undefined') {
+      let down = KNOB1_BTN.read();
+      if (down && !knob1WasDown) flapAction();
+      knob1WasDown = down;
+    }
 
-  // Tilt easing
-  let targetTilt = 0;
-  if (bird && isFinite(bird.vy)) targetTilt = (bird.vy < 0) ? -1 : 1;
-  roachTilt += (targetTilt - roachTilt) * 0.15;
+    // Now we can bail out of motion/physics while on other screens
+    if (inTitle) return;
+    if (gameOver || paused) return;
 
-  // Physics
-  bird.vy += GRAVITY;
-  bird.y += bird.vy;
-  if (!isFinite(bird.y)) { bird.y = H/2; bird.vy = 0; }
-  if (bird.y < 0 || bird.y + bird.size > H) endRun("FELL");
+    // Flap animation countdown
+    if (roachFlapT > 0) roachFlapT--;
 
-// ---- Ceiling / Floor Collision (CLAMP HERE) ----
-  if (bird.y <= PLAY_TOP) {
-    bird.y = PLAY_TOP;
-    endRun("HIT");
-  } else if (bird.y + bird.size >= PLAY_BOT) {
-    bird.y = PLAY_BOT - bird.size;
-    endRun("HIT");
-}
+    // Tilt easing
+    let targetTilt = 0;
+    if (bird && isFinite(bird.vy)) targetTilt = bird.vy < 0 ? -1 : 1;
+    roachTilt += (targetTilt - roachTilt) * 0.15;
 
-  // New collision loop
-  // Pipes move/collide/score
-  for (let i = 0; i < pipes.length; i++) {
-  let p = pipes[i];
-  p.x -= PIPE_SPEED;
-  if (bird.x + bird.size > p.x && bird.x < p.x + PIPE_WIDTH) {
-    let gapTop = Math.max(p.gapY, PLAY_TOP);
-    let gapBot = Math.min(p.gapY + p.gap, PLAY_BOT);
-    if (bird.y < gapTop || bird.y + bird.size > gapBot) endRun("HIT");
-  }
-  if (!p.scored && p.x + PIPE_WIDTH < bird.x) {
-    p.scored = true;
-    score++;
-  }
-}
+    // Physics
+    bird.vy += GRAVITY;
+    bird.y += bird.vy;
+    if (!isFinite(bird.y)) {
+      bird.y = H / 2;
+      bird.vy = 0;
+    }
+    if (bird.y < 0 || bird.y + bird.size > H) endRun('FELL');
 
-  // Spawn pipes
-  let last = pipes[pipes.length - 1];
-  if (!last) newPipe();
-  else if (last.x <= W - PIPE_SPACING) newPipe();
-  // Remove pipes that have gone off screen (INSIDE update!)
-  if (pipes.length && pipes[0].x < -PIPE_WIDTH) {
-    pipes.shift();
-  }
-}
+    // ---- Ceiling / Floor Collision (CLAMP HERE) ----
+    if (bird.y <= PLAY_TOP) {
+      bird.y = PLAY_TOP;
+      endRun('HIT');
+    } else if (bird.y + bird.size >= PLAY_BOT) {
+      bird.y = PLAY_BOT - bird.size;
+      endRun('HIT');
+    }
 
-function drawCentered(text, y) {
-  C.setFontAlign(-1, -1); // left/top
-  let tw = C.stringWidth(text);
-  let x = Math.max(0, Math.floor((W - tw) / 2));
-  C.drawString(text, x, y);
-}
+    // New collision loop
+    // Pipes move/collide/score
+    for (let i = 0; i < pipes.length; i++) {
+      let p = pipes[i];
+      p.x -= PIPE_SPEED;
+      if (bird.x + bird.size > p.x && bird.x < p.x + PIPE_WIDTH) {
+        let gapTop = Math.max(p.gapY, PLAY_TOP);
+        let gapBot = Math.min(p.gapY + p.gap, PLAY_BOT);
+        if (bird.y < gapTop || bird.y + bird.size > gapBot) endRun('HIT');
+      }
+      if (!p.scored && p.x + PIPE_WIDTH < bird.x) {
+        p.scored = true;
+        score++;
+      }
+    }
 
-function draw() {
-  if (inTitle) {
-    drawTitleScreen();
-    return;
-  }
-  // Pipes
-  if (!pipes) pipes = [];
-  C.clear();
-  // (Optional but recommended) draw visible ceiling/floor first
-  drawBounds();
-  for (let i = 0; i < pipes.length; i++) {
-    let p = pipes[i];
-    let gapY = Math.max(p.gapY, PLAY_TOP);
-    // Top pipe: stop at the start of the gap (but never draw above the ceiling bar)
-    C.fillRect(p.x, PLAY_TOP, p.x + PIPE_WIDTH, gapY);
-    // Bottom pipe: start after the gap and stop at the floor bar
-    C.fillRect(p.x, gapY + p.gap, p.x + PIPE_WIDTH, PLAY_BOT);
+    // Spawn pipes
+    let last = pipes[pipes.length - 1];
+    if (!last) newPipe();
+    else if (last.x <= W - PIPE_SPACING) newPipe();
+    // Remove pipes that have gone off screen (INSIDE update!)
+    if (pipes.length && pipes[0].x < -PIPE_WIDTH) {
+      pipes.shift();
+    }
   }
 
-  // Rad-Roach
-  drawRadroach(bird.x, bird.y, bird.size, frameCount, roachFlapT, roachTilt);
-  // Score
-  C.setFont("6x8", 2);
-  C.setFontAlign(-1, -1);
-  C.drawString("Score: " + score, 2, PLAY_TOP + 2);
-  if (gameOver) {
-  // If we’re in the impact phase, draw splat instead of text
-  if (!showGameOverUI && impactFX) {
-    // Splat overlay - Increases by 0.3 times.
-	// If splat is increased, setTimeout (at the bottom of "function endRun") should also be increased to the same.
-	// Also, inputLockedUntil should be set to the same thing.
-    let t = Math.min(1, (getTime() - impactFX.t0) / 0.75); // 0..1
-    drawSplat(impactFX.x, impactFX.y, 3, t);
-    flushScreen();
-    return;
+  function drawCentered(text, y) {
+    C.setFontAlign(-1, -1); // left/top
+    let tw = C.stringWidth(text);
+    let x = Math.max(0, Math.floor((W - tw) / 2));
+    C.drawString(text, x, y);
   }
-  // Otherwise: normal Game Over screen
+
+  function draw() {
+    if (inTitle) {
+      drawTitleScreen();
+      return;
+    }
+    // Pipes
+    if (!pipes) pipes = [];
+    C.clear();
+    // (Optional but recommended) draw visible ceiling/floor first
+    drawBounds();
+    for (let i = 0; i < pipes.length; i++) {
+      let p = pipes[i];
+      let gapY = Math.max(p.gapY, PLAY_TOP);
+      // Top pipe: stop at the start of the gap (but never draw above the ceiling bar)
+      C.fillRect(p.x, PLAY_TOP, p.x + PIPE_WIDTH, gapY);
+      // Bottom pipe: start after the gap and stop at the floor bar
+      C.fillRect(p.x, gapY + p.gap, p.x + PIPE_WIDTH, PLAY_BOT);
+    }
+
+    // Rad-Roach
+    drawRadroach(bird.x, bird.y, bird.size, frameCount, roachFlapT, roachTilt);
+    // Score
+    C.setFont('6x8', 2);
+    C.setFontAlign(-1, -1);
+    C.drawString('Score: ' + score, 2, PLAY_TOP + 2);
+    if (gameOver) {
+      // If we’re in the impact phase, draw splat instead of text
+      if (!showGameOverUI && impactFX) {
+        // Splat overlay - Increases by 0.3 times.
+        // If splat is increased, setTimeout (at the bottom of "function endRun") should also be increased to the same.
+        // Also, inputLockedUntil should be set to the same thing.
+        let t = Math.min(1, (getTime() - impactFX.t0) / 0.75); // 0..1
+        drawSplat(impactFX.x, impactFX.y, 3, t);
+        flushScreen();
+        return;
+      }
+      // Otherwise: normal Game Over screen
       C.clear();
-      C.setFont("6x8", 3);
-      drawCentered("GAME OVER", Math.floor(H * 0.14));
-      C.setFont("6x8", 2);
-        drawCentered("Score: " + finalScore, Math.floor(H * 0.30));
-        drawCentered("Highest Score: " + highScore, Math.floor(H * 0.40));
-      drawCentered("Knob1/Radio: Play Again", Math.floor(H * 0.64));
-      drawCentered("Power: Exit to MAIN", Math.floor(H * 0.74));
-  } else if (paused) {
-    drawPauseMenu();
-  }
-  flushScreen();
-}
-
-// If the display supports color and you’re already using setColor, you could make the eyes “glow red”
-// by briefly switching colors for the eye pixels — but the blink/pulse trick works in monochrome as well.
-function drawRadroach(x, y, s, t, flapT, tilt) {
-  let k = Math.max(1, Math.floor(s / 3));
-  // tilt shift: -1..1 => -2..2 pixels
-  let dxTop = Math.round((-tilt) * 2);   // tilt up shifts head slightly
-  let dxBot = Math.round(( tilt) * 2);
-  // BODY
-  C.fillRect(x + 1*k + dxTop, y + 1*k, x + 5*k + dxBot, y + 4*k);
-  C.fillRect(x + 2*k + dxTop, y + 0*k, x + 4*k + dxTop, y + 1*k); // head
-  C.fillRect(x + 1*k + dxBot, y + 4*k, x + 5*k + dxBot, y + 5*k); // abdomen
-  // EYES (mono "glow" effect by adding a halo)
-  let eyeGlow = ((frameCount >> 3) & 1); // toggle every ~8 frames
-  let ex1 = x + 2*k + dxTop;
-  let ex2 = x + 4*k + dxTop;
-  let ey  = y + 0*k;
-  // Core eye pixels
-  C.fillRect(ex1, ey, ex1, ey);
-  C.fillRect(ex2, ey, ex2, ey);
-if (eyeGlow) {
-  // halo pixels (a tiny plus-shape around each eye)
-  C.fillRect(ex1-1, ey,   ex1-1, ey);
-  C.fillRect(ex1+1, ey,   ex1+1, ey);
-  C.fillRect(ex1,   ey-1, ex1,   ey-1);
-  C.fillRect(ex1,   ey+1, ex1,   ey+1);
-  C.fillRect(ex2-1, ey,   ex2-1, ey);
-  C.fillRect(ex2+1, ey,   ex2+1, ey);
-  C.fillRect(ex2,   ey-1, ex2,   ey-1);
-  C.fillRect(ex2,   ey+1, ex2,   ey+1);
-}
-  // WINGS (only visible right after flap)
-  if (flapT > 0) {
-    // alternate wing pose for a flapping look
-    let w = (flapT & 1) ? 3 : 2;
-    // left wing
-    C.drawLine(x + 1*k + dxTop, y + 2*k, x - w*k, y + 1*k);
-    C.drawLine(x + 1*k + dxTop, y + 3*k, x - w*k, y + 4*k);
-    // right wing
-    C.drawLine(x + 5*k + dxBot, y + 2*k, x + (6+w)*k, y + 1*k);
-    C.drawLine(x + 5*k + dxBot, y + 3*k, x + (6+w)*k, y + 4*k);
-  }
-  // LEGS (simple)
-  C.fillRect(x + 0*k + dxTop, y + 2*k, x + 0*k + dxTop, y + 2*k);
-  C.fillRect(x + 6*k + dxBot, y + 2*k, x + 6*k + dxBot, y + 2*k);
-}
-
-function bindGameControls() {
-  Pip.removeAllListeners();
-   Pip.on("torch", () => {
-     if (!gameOver && typeof togglePause === "function") togglePause();
-  });
-Pip.on("knob1", val => {
-  if (paused && !gameOver) {
-    if (val < 0) {
-      menuIndex = (menuIndex + 1) % menuItems.length;
-    } else if (val > 0) {
-      menuIndex = (menuIndex + menuItems.length - 1) % menuItems.length;
+      C.setFont('6x8', 3);
+      drawCentered('GAME OVER', Math.floor(H * 0.14));
+      C.setFont('6x8', 2);
+      drawCentered('Score: ' + finalScore, Math.floor(H * 0.3));
+      drawCentered('Highest Score: ' + highScore, Math.floor(H * 0.4));
+      drawCentered('Knob1/Radio: Play Again', Math.floor(H * 0.64));
+      drawCentered('Power: Exit to MAIN', Math.floor(H * 0.74));
+    } else if (paused) {
+      drawPauseMenu();
     }
-    return;
+    flushScreen();
   }
-});
-}
 
-function drawPauseMenu() {
-  C.clear();
-  C.setFontAlign(-1, -1);
-  C.drawRect(10, 20, W - 10, H - 20);
-  C.setFont("6x8", 3);
-  drawCentered("PAUSED", 28);
-  C.setFont("6x8", 2);
-  for (let i = 0; i < menuItems.length; i++) {
-//    let y = 52 + i * 12;
-    let y = 56 + i * 16;
-    let t = (i === menuIndex ? "> " : "  ") + menuItems[i];
-    drawCentered(t, y);
-  }
-  C.setFont("6x8", 1.5);
-  drawCentered("Top Torch Press: Resume", H - 40);
-  drawCentered("Left Knob Press: Select", H - 30);
-}
-
-function stopGame() {
-  if (loopId) { clearInterval(loopId); loopId = null; }
-  if (powerWatchId) { clearWatch(powerWatchId); powerWatchId = null; }
-  if (tOverSound) { clearTimeout(tOverSound); tOverSound = null; }
-  if (tImpactClear) { clearTimeout(tImpactClear); tImpactClear = null; }
-  if (global.Pip) Pip.removeAllListeners();
-}
-
-function endRun(reason) {
-  gameOver = true;
-  paused = false;
-  // Can be tuned up or down to change "0.6"
-  // Ideally should match the 'Splat' timing
-  inputLockedUntil = getTime() + 0.75; // 600 ms lockout
-  finalScore = score;
-  saveHighScoreIfNeeded(finalScore);
-  // Start impact animation for 300ms
-  showGameOverUI = false;
-  impactFX = {
-    kind: reason,
-    x: Math.round(bird.x + bird.size/2),
-    y: (reason === "FELL")
-         ? Math.min(H - 6, Math.round(bird.y + bird.size/2))
-         : Math.round(bird.y + bird.size/2),
-    t0: getTime()
-  };
-  // Play sound (your full paths)
-  if (reason === "HIT")  playSound(SND_SPLAT);
-  if (reason === "FELL") playSound(SND_HIT);
-  // playSound(SND_OVER);
-  // clear any previous endRun timers (defensive)
-  if (tOverSound) { clearTimeout(tOverSound); tOverSound = null; }
-  if (tImpactClear) { clearTimeout(tImpactClear); tImpactClear = null; }
-  tOverSound = setTimeout(() => playSound(SND_OVER), 500);
-  tImpactClear = setTimeout(() => {
-    showGameOverUI = true;
-    impactFX = null;
-    tImpactClear = null;
-  }, 750);
-}
-
-function startGame() {
-  stopGame();
-  resetGame();
-  // drawTitleScreen();
-  draw();
-  playSound(SND_START); // optional: start sound when restarting
-  bindGameControls();
-  powerWatchId = setWatch(
-    () => { E.reboot(); }, 
-    BTN_POWER, 
-    {
-      debounce: 50,
-      edge: "rising",
-      repeat: true,
+  // If the display supports color and you’re already using setColor, you could make the eyes “glow red”
+  // by briefly switching colors for the eye pixels — but the blink/pulse trick works in monochrome as well.
+  function drawRadroach(x, y, s, t, flapT, tilt) {
+    let k = Math.max(1, Math.floor(s / 3));
+    // tilt shift: -1..1 => -2..2 pixels
+    let dxTop = Math.round(-tilt * 2); // tilt up shifts head slightly
+    let dxBot = Math.round(tilt * 2);
+    // BODY
+    C.fillRect(x + 1 * k + dxTop, y + 1 * k, x + 5 * k + dxBot, y + 4 * k);
+    C.fillRect(x + 2 * k + dxTop, y + 0 * k, x + 4 * k + dxTop, y + 1 * k); // head
+    C.fillRect(x + 1 * k + dxBot, y + 4 * k, x + 5 * k + dxBot, y + 5 * k); // abdomen
+    // EYES (mono "glow" effect by adding a halo)
+    let eyeGlow = (frameCount >> 3) & 1; // toggle every ~8 frames
+    let ex1 = x + 2 * k + dxTop;
+    let ex2 = x + 4 * k + dxTop;
+    let ey = y + 0 * k;
+    // Core eye pixels
+    C.fillRect(ex1, ey, ex1, ey);
+    C.fillRect(ex2, ey, ex2, ey);
+    if (eyeGlow) {
+      // halo pixels (a tiny plus-shape around each eye)
+      C.fillRect(ex1 - 1, ey, ex1 - 1, ey);
+      C.fillRect(ex1 + 1, ey, ex1 + 1, ey);
+      C.fillRect(ex1, ey - 1, ex1, ey - 1);
+      C.fillRect(ex1, ey + 1, ex1, ey + 1);
+      C.fillRect(ex2 - 1, ey, ex2 - 1, ey);
+      C.fillRect(ex2 + 1, ey, ex2 + 1, ey);
+      C.fillRect(ex2, ey - 1, ex2, ey - 1);
+      C.fillRect(ex2, ey + 1, ex2, ey + 1);
     }
-  );
-  draw();
-  loopId = setInterval(() => {
-    update();
+    // WINGS (only visible right after flap)
+    if (flapT > 0) {
+      // alternate wing pose for a flapping look
+      let w = flapT & 1 ? 3 : 2;
+      // left wing
+      C.drawLine(x + 1 * k + dxTop, y + 2 * k, x - w * k, y + 1 * k);
+      C.drawLine(x + 1 * k + dxTop, y + 3 * k, x - w * k, y + 4 * k);
+      // right wing
+      C.drawLine(x + 5 * k + dxBot, y + 2 * k, x + (6 + w) * k, y + 1 * k);
+      C.drawLine(x + 5 * k + dxBot, y + 3 * k, x + (6 + w) * k, y + 4 * k);
+    }
+    // LEGS (simple)
+    C.fillRect(x + 0 * k + dxTop, y + 2 * k, x + 0 * k + dxTop, y + 2 * k);
+    C.fillRect(x + 6 * k + dxBot, y + 2 * k, x + 6 * k + dxBot, y + 2 * k);
+  }
+
+  function bindGameControls() {
+    Pip.removeAllListeners();
+    Pip.on('torch', () => {
+      if (!gameOver && typeof togglePause === 'function') togglePause();
+    });
+    Pip.on('knob1', (val) => {
+      if (paused && !gameOver) {
+        if (val < 0) {
+          menuIndex = (menuIndex + 1) % menuItems.length;
+        } else if (val > 0) {
+          menuIndex = (menuIndex + menuItems.length - 1) % menuItems.length;
+        }
+        return;
+      }
+    });
+  }
+
+  function drawPauseMenu() {
+    C.clear();
+    C.setFontAlign(-1, -1);
+    C.drawRect(10, 20, W - 10, H - 20);
+    C.setFont('6x8', 3);
+    drawCentered('PAUSED', 28);
+    C.setFont('6x8', 2);
+    for (let i = 0; i < menuItems.length; i++) {
+      //    let y = 52 + i * 12;
+      let y = 56 + i * 16;
+      let t = (i === menuIndex ? '> ' : '  ') + menuItems[i];
+      drawCentered(t, y);
+    }
+    C.setFont('6x8', 1.5);
+    drawCentered('Top Torch Press: Resume', H - 40);
+    drawCentered('Left Knob Press: Select', H - 30);
+  }
+
+  function stopGame() {
+    if (loopId) {
+      clearInterval(loopId);
+      loopId = null;
+    }
+    if (powerWatchId) {
+      clearWatch(powerWatchId);
+      powerWatchId = null;
+    }
+    if (tOverSound) {
+      clearTimeout(tOverSound);
+      tOverSound = null;
+    }
+    if (tImpactClear) {
+      clearTimeout(tImpactClear);
+      tImpactClear = null;
+    }
+    if (global.Pip) Pip.removeAllListeners();
+  }
+
+  function endRun(reason) {
+    gameOver = true;
+    paused = false;
+    // Can be tuned up or down to change "0.6"
+    // Ideally should match the 'Splat' timing
+    inputLockedUntil = getTime() + 0.75; // 600 ms lockout
+    finalScore = score;
+    saveHighScoreIfNeeded(finalScore);
+    // Start impact animation for 300ms
+    showGameOverUI = false;
+    impactFX = {
+      kind: reason,
+      x: Math.round(bird.x + bird.size / 2),
+      y:
+        reason === 'FELL'
+          ? Math.min(H - 6, Math.round(bird.y + bird.size / 2))
+          : Math.round(bird.y + bird.size / 2),
+      t0: getTime(),
+    };
+    // Play sound (your full paths)
+    if (reason === 'HIT') playSound(SND_SPLAT);
+    if (reason === 'FELL') playSound(SND_HIT);
+    // playSound(SND_OVER);
+    // clear any previous endRun timers (defensive)
+    if (tOverSound) {
+      clearTimeout(tOverSound);
+      tOverSound = null;
+    }
+    if (tImpactClear) {
+      clearTimeout(tImpactClear);
+      tImpactClear = null;
+    }
+    tOverSound = setTimeout(() => playSound(SND_OVER), 500);
+    tImpactClear = setTimeout(() => {
+      showGameOverUI = true;
+      impactFX = null;
+      tImpactClear = null;
+    }, 750);
+  }
+
+  function startGame() {
+    stopGame();
+    resetGame();
+    // drawTitleScreen();
     draw();
-    frameCount++;
-  }, 50);
-}
+    playSound(SND_START); // optional: start sound when restarting
+    bindGameControls();
+    powerWatchId = setWatch(
+      () => {
+        E.reboot();
+      },
+      BTN_POWER,
+      {
+        debounce: 50,
+        edge: 'rising',
+        repeat: true,
+      },
+    );
+    draw();
+    loopId = setInterval(() => {
+      update();
+      draw();
+      frameCount++;
+    }, 50);
+  }
 
-startGame();
+  startGame();
 }
