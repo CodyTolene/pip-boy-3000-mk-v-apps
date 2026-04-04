@@ -9,5 +9,6 @@
   "tags": "game",
   "type": "app",
   "readme": "README.md",
-  "storage": [{ "name": "USER/asteroid.js", "url": "app.js" }]
+  "storage": [{ "name": "USER/asteroid.js", "url": "app.js" }],
+  "storageOptional": []
 }

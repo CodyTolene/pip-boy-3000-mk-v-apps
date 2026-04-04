@@ -17,5 +17,6 @@
     { "name": "USER/FLAPPYROACH/HitGround.wav", "url": "assets/HitGround.wav" },
     { "name": "USER/FLAPPYROACH/SplatOnPipe.wav", "url": "assets/SplatOnPipe.wav" },
     { "name": "USER/FLAPPYROACH/StartGame.wav", "url": "assets/StartGame.wav" }
-  ]
+  ],
+  "storageOptional": []
 }

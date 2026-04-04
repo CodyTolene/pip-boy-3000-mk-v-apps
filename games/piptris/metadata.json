@@ -16,7 +16,32 @@
     { "name": "USER/PIPTRIS/block.json", "url": "assets/block.json" },
     { "name": "USER/PIPTRIS/gear.json", "url": "assets/gear.json" },
     { "name": "USER/PIPTRIS/nuke.json", "url": "assets/nuke.json" },
-    { "name": "USER/PIPTRIS/radioactive.json", "url": "assets/radioactive.json" },
-    { "name": "USER/PIPTRIS/piptris-symphony.wav", "url": "assets/piptris-symphony.wav" }
+    { "name": "USER/PIPTRIS/radioactive.json", "url": "assets/radioactive.json" }
+  ],
+  "storageOptional": [
+    {
+      "label": "Big Band Swing (Music)",
+      "name": "USER/PIPTRIS/piptris-big-band-swing.wav",
+      "sizeKB": 826,
+      "url": "assets/piptris-big-band-swing.wav"
+    },
+    {
+      "label": "Electro Swing (Music)",
+      "name": "USER/PIPTRIS/piptris-electro-swing.wav",
+      "sizeKB": 1150,
+      "url": "assets/piptris-electro-swing.wav"
+    },
+    {
+      "label": "Symphony (Music)",
+      "name": "USER/PIPTRIS/piptris-symphony.wav",
+      "sizeKB": 1614,
+      "url": "assets/piptris-symphony.wav"
+    },
+    {
+      "label": "Whimsical (Music)",
+      "name": "USER/PIPTRIS/piptris-whimsical.wav",
+      "sizeKB": 1635,
+      "url": "assets/piptris-whimsical.wav"
+    }
   ]
 }

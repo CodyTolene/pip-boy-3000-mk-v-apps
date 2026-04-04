@@ -199,5 +199,6 @@
       "name": "USER/StatsDisplay/SPECIAL/gLuck.json",
       "url": "StatsDisplay/SPECIAL/gLuck.json"
     }
-  ]
+  ],
+  "storageOptional": []
 }

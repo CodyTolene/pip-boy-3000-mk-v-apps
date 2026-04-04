@@ -24,5 +24,6 @@
     { "name": "USER/PIP_DOOM/PISTOL_1.json", "url": "assets/PISTOL_1.json" },
     { "name": "USER/PIP_DOOM/RELOAD.wav", "url": "assets/RELOAD.wav" },
     { "name": "USER/PIP_DOOM/SHOOT.wav", "url": "assets/SHOOT.wav" }
-  ]
+  ],
+  "storageOptional": []
 }

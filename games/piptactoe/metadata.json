@@ -9,5 +9,6 @@
   "tags": "game",
   "type": "app",
   "readme": "README.md",
-  "storage": [{ "name": "USER/PipTacToe.js", "url": "PipTacToe.js" }]
+  "storage": [{ "name": "USER/PipTacToe.js", "url": "PipTacToe.js" }],
+  "storageOptional": []
 }

@@ -9,5 +9,6 @@
   "tags": "game",
   "type": "app",
   "readme": "README.md",
-  "storage": [{ "name": "USER/AsteroPIPs.js", "url": "AsteroPIPs.min.js" }]
+  "storage": [{ "name": "USER/AsteroPIPs.js", "url": "AsteroPIPs.min.js" }],
+  "storageOptional": []
 }

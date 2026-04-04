@@ -9,5 +9,6 @@
   "tags": "media,tool",
   "type": "app",
   "readme": "README.md",
-  "storage": [{ "name": "USER/fileexplorer.js", "url": "app.min.js" }]
+  "storage": [{ "name": "USER/fileexplorer.js", "url": "app.min.js" }],
+  "storageOptional": []
 }

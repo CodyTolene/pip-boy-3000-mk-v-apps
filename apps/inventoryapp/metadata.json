@@ -32,5 +32,6 @@
     { "name": "DATA/Soda_03.wav", "url": "DATA/Soda_03.wav" },
     { "name": "DATA/Stimpak.wav", "url": "DATA/Stimpak.wav" },
     { "name": "DATA/Stimpak_img.js", "url": "DATA/Stimpak_img.js" }
-  ]
+  ],
+  "storageOptional": []
 }

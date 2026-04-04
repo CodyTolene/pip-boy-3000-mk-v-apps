@@ -15,5 +15,6 @@
       "name": "USER/CUSTOM_RADIO/customradio.min.js",
       "url": "assets/customradio.min.js"
     }
-  ]
+  ],
+  "storageOptional": []
 }

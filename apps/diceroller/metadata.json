@@ -21,5 +21,6 @@
       "name": "USER/DICE_ROLLER/dice-throw.wav",
       "url": "assets/dice-throw.wav"
     }
-  ]
+  ],
+  "storageOptional": []
 }
