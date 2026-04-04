@@ -1,3 +1,7 @@
+3.1.1
+https://github.com/CodyTolene/pip-boy-3000-mk-v-apps/pull/1
+- Simplify music directory handling by switching from the `music` property to the `files` array.
+
 3.1.0
 https://github.com/CodyTolene/pip-boy-apps/pull/40
 - Add a few optimizations for block rendering:

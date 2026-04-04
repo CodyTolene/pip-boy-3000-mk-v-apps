@@ -5,10 +5,15 @@
   "type": "module",
   "scripts": {
     "build": "node --experimental-strip-types .scripts/build.ts",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "min": "node .scripts/minify.js",
+    "min:watch": "node .scripts/minify.js --watch",
+    "prepare": "husky"
   },
   "devDependencies": {
     "@types/node": "^25.5.0",
-    "prettier": "^3.8.1"
+    "husky": "^9.1.7",
+    "prettier": "^3.8.1",
+    "terser": "^5.39.0"
   }
 }
