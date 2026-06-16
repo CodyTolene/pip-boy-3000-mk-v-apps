@@ -1,9 +1,16 @@
-//PIP-TAC-TOE
-//First espruino project I've made for the Wand Company Pip-Boy Mk.V, hope you enjoy!
-//github.com/Pip-4111
+// =============================================================================
+//  Name: Pip-Tac-Toe
+//  Author(s): @pip-4111, @JLDenson
+//  License: MIT
+//  Repository: https://github.com/CodyTolene/pip-boy-3000-mk-v-apps
+// =============================================================================
+// First espruino project I've made for the Wand Company Pip-Boy Mk.V, hope you enjoy!
+// github.com/Pip-4111
+// 
 // Fixes, updates, sound, and other contributions by James L. Denson
 // https://github.com/JLDenson
 // Sound files under Creative Commons Licensing
+// =============================================================================let screenWidth = bC.getWidth(),
 let screenWidth = bC.getWidth(),
  screenHeight = bC.getHeight(),
  currentPlayer = "X",
