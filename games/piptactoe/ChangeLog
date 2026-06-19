@@ -1,3 +1,7 @@
+1.1.6
+https://github.com/CodyTolene/pip-boy-3000-mk-v-apps/pull/4
+- Added sound effects to the game.
+
 1.1.5
 https://github.com/CodyTolene/pip-boy-apps/pull/67
 - Allow screen brightness to be adjusted while the game is running using the top "torch" buttton.

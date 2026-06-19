@@ -1,22 +1,39 @@
-//PIP-TAC-TOE
-//First espruino project I've made for the Wand Company Pip-Boy Mk.V, hope you enjoy!
-//github.com/Pip-4111
-let currentPlayer = 'X';
-let board = [
-  ['', '', ''],
-  ['', '', ''],
-  ['', '', ''],
-];
-let cursorX = 0,
-  cursorY = 0;
-let gameOver = false;
-let inMenu = true;
-let menuOptions = ['2 PLAYER', 'VS CPU'];
-let menuSelection = 0;
-let vsCPU = false;
+// =============================================================================
+//  Name: Pip-Tac-Toe
+//  Author(s): @pip-4111, @JLDenson
+//  License: MIT
+//  Repository: https://github.com/CodyTolene/pip-boy-3000-mk-v-apps
+// =============================================================================
+//  First espruino project I've made for the Wand Company Pip-Boy Mk.V, hope
+//  you enjoy! https://github.com/Pip-4111
+//
+//  Fixes, updates, sound, and other contributions by James L. Denson
+//  https://github.com/JLDenson
+//  Sound files under Creative Commons Licensing
+// =============================================================================
 
-var screenWidth = bC.getWidth();
-var screenHeight = bC.getHeight();
+let screenWidth = bC.getWidth(),
+  screenHeight = bC.getHeight(),
+  currentPlayer = 'X',
+  board = [
+    ['', '', ''],
+    ['', '', ''],
+    ['', '', ''],
+  ],
+  cursorX = 0,
+  cursorY = 0,
+  gameOver = false,
+  inMenu = true,
+  menuOptions = ['2 PLAYER', 'VS CPU'],
+  menuSelection = 0,
+  vsCPU = false,
+  snd_Start = '/USER/PIPTACTOE/StartGame.wav',
+  snd_Play = '/USER/PIPTACTOE/StartPlay.wav',
+  snd_X = '/USER/PIPTACTOE/PlaceX.wav',
+  snd_O = '/USER/PIPTACTOE/PlaceO.wav',
+  snd_Win = '/USER/PIPTACTOE/Winner.wav',
+  snd_Draw = '/USER/PIPTACTOE/Tied.wav',
+  snd_Lose = '/USER/PIPTACTOE/Loser.wav';
 
 const spacing = 10,
   cellWidth = 50,
@@ -25,6 +42,14 @@ const boardWidth = 3 * cellWidth + 2 * spacing;
 const boardHeight = 3 * cellHeight + 2 * spacing;
 const offsetX = (screenWidth - boardWidth) / 2 + 10;
 const offsetY = (screenHeight - boardHeight) / 2 - 16;
+
+// Play Sounds
+function playSound(name) {
+  try {
+    Pip.audioStop();
+    Pip.audioStart(name);
+  } catch (e) {}
+}
 
 //  Adjust Pip-Boy Brightness
 function adjustBrightness() {
@@ -37,10 +62,10 @@ function adjustBrightness() {
   Pip.updateBrightness();
 }
 
+// Brighten things up overall
 function drawBoard() {
   bC.clear();
   bC.setFont('6x8', 2.5);
-  // Brighten things up a bit - JLDenson
   bC.setColor(1, 1, 1);
   bC.setBgColor(0, 0, 0);
 
@@ -213,8 +238,15 @@ function getBestMove() {
 }
 
 function showGameOverMessage(result) {
-  let msg = result === 'Draw' ? "It's a draw!" : `Player ${result} wins!`;
+  if (result === 'Draw') {
+    playSound(snd_Draw);
+  } else if (vsCPU && result === 'O') {
+    playSound(snd_Lose);
+  } else {
+    playSound(snd_Win);
+  }
   bC.clear();
+  let msg = result === 'Draw' ? "It's a draw!" : `Player ${result} wins!`;
   bC.setFont('6x8', 2.5);
   bC.setColor(1, 1, 1);
   bC.setBgColor(0, 0, 0);
@@ -223,26 +255,29 @@ function showGameOverMessage(result) {
 
   setTimeout(() => {
     showMainMenu();
-  }, 2000);
+  }, 6000); // Set time for end-of-game screen to display
 }
 
 function placeMark() {
   if (gameOver || board[cursorY][cursorX] !== '') return;
 
   board[cursorY][cursorX] = currentPlayer;
+  playSound(currentPlayer === 'X' ? snd_X : snd_O);
   drawBoard();
 
   let result = checkWin();
   if (result) {
     gameOver = true;
-    showGameOverMessage(result);
+    setTimeout(function () {
+      showGameOverMessage(result);
+    }, 500); // Waits half a second after last move to allow for placement sound before End Screen
     return;
   }
 
   currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
 
   if (!gameOver && vsCPU && currentPlayer === 'O') {
-    cpuMove();
+    setTimeout(cpuMove, 500);
   }
 }
 
@@ -264,6 +299,7 @@ function cpuMove() {
 
   setTimeout(() => {
     board[move.y][move.x] = 'O';
+    playSound(snd_O);
     drawBoard();
 
     let result = checkWin();
@@ -307,6 +343,9 @@ function bindGameControls() {
     cursorX = val > 0 ? (cursorX + 1) % 3 : (cursorX + 2) % 3;
     drawBoard();
   });
+
+  //  Pip.removeAllListeners("torch");
+  //  Pip.on("torch", exitGame);
 }
 
 function exitGame() {
@@ -336,10 +375,12 @@ function showMainMenu() {
     bC.flip();
   }
   drawMenu();
+  playSound(snd_Start);
 
   Pip.removeAllListeners();
   Pip.on('knob1', (val) => {
     if (val === 0) {
+      playSound(snd_Play);
       inMenu = false;
       vsCPU = menuSelection === 1;
       resetGame();

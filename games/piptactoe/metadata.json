@@ -1,14 +1,23 @@
 {
   "id": "piptactoe",
   "name": "PipTacToe",
-  "author": "@pip-4111",
-  "version": "1.1.5",
-  "description": "A fun Tic-Tac-Toe game for the Pip-Boy 3000 Mk V.",
-  "icon": "piptactoe.png",
-  "previews": ["piptactoe.mp4"],
+  "author": "@pip-4111, @JLDenson",
+  "version": "1.1.6",
+  "description": "A fun Tic-Tac-Toe game for the Pip-Boy 3000 Mk V. Now with sounds!",
+  "icon": "assets/piptactoe.png",
   "tags": "game",
   "type": "app",
   "readme": "README.md",
-  "storage": [{ "name": "USER/PipTacToe.js", "url": "PipTacToe.js" }],
+  "custom": "",
+  "storage": [
+    { "name": "USER/PipTacToe.js", "url": "app.min.js" },
+    { "name": "USER/PIPTACTOE/Loser.wav", "url": "assets/Loser.wav" },
+    { "name": "USER/PIPTACTOE/PlaceO.wav", "url": "assets/PlaceO.wav" },
+    { "name": "USER/PIPTACTOE/PlaceX.wav", "url": "assets/PlaceX.wav" },
+    { "name": "USER/PIPTACTOE/StartGame.wav", "url": "assets/StartGame.wav" },
+    { "name": "USER/PIPTACTOE/StartPlay.wav", "url": "assets/StartPlay.wav" },
+    { "name": "USER/PIPTACTOE/Tied.wav", "url": "assets/Tied.wav" },
+    { "name": "USER/PIPTACTOE/Winner.wav", "url": "assets/Winner.wav" }
+  ],
   "storageOptional": []
 }
