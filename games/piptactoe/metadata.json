@@ -9,13 +9,15 @@
   "type": "app",
   "readme": "README.md",
   "custom": "",
-  "storage": [{ "name": "USER/PipTacToe/PipTacToe.js", "url": "assets/PipTacToe.min.js" },
-  { "name": "USER/PipTacToe/Loser.wav", "url": "assets/Loser.wav" },
-  { "name": "USER/PipTacToe/PlaceO.wav", "url": "assets/PlaceO.wav" },
-  { "name": "USER/PipTacToe/PlaceX.wav", "url": "assets/PlaceX.wav" },
-  { "name": "USER/PipTacToe/StartGame.wav", "url": "assets/StartGame.wav" },
-  { "name": "USER/PipTacToe/StartPlay.wav", "url": "assets/StartPlay.wav" },
-  { "name": "USER/PipTacToe/Tied.wav", "url": "assets/Tied.wav" },
-  { "name": "USER/PipTacToe/Winner.wav", "url": "assets/Winner.wav" }],
+  "storage": [
+    { "name": "USER/PipTacToe/PipTacToe.js", "url": "PipTacToe.min.js" },
+    { "name": "USER/PipTacToe/Loser.wav", "url": "assets/Loser.wav" },
+    { "name": "USER/PipTacToe/PlaceO.wav", "url": "assets/PlaceO.wav" },
+    { "name": "USER/PipTacToe/PlaceX.wav", "url": "assets/PlaceX.wav" },
+    { "name": "USER/PipTacToe/StartGame.wav", "url": "assets/StartGame.wav" },
+    { "name": "USER/PipTacToe/StartPlay.wav", "url": "assets/StartPlay.wav" },
+    { "name": "USER/PipTacToe/Tied.wav", "url": "assets/Tied.wav" },
+    { "name": "USER/PipTacToe/Winner.wav", "url": "assets/Winner.wav" }
+  ],
   "storageOptional": []
 }

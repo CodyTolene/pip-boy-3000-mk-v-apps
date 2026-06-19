@@ -12,5 +12,4 @@
 
 ### Description
 
-A fun Tic-Tac-Toe game for the Pip-Boy 3000 Mk V.
-Now with sounds!
+A fun Tic-Tac-Toe game for the Pip-Boy 3000 Mk V. Now with sounds!
