@@ -244,35 +244,35 @@
     "custom": "",
     "storage": [
       {
-        "name": "USER/PipTacToe/PipTacToe.js",
-        "url": "piptactoe/PipTacToe.min.js"
+        "name": "USER/PipTacToe.js",
+        "url": "piptactoe/app.min.js"
       },
       {
-        "name": "USER/PipTacToe/Loser.wav",
+        "name": "USER/PIPTACTOE/Loser.wav",
         "url": "piptactoe/assets/Loser.wav"
       },
       {
-        "name": "USER/PipTacToe/PlaceO.wav",
+        "name": "USER/PIPTACTOE/PlaceO.wav",
         "url": "piptactoe/assets/PlaceO.wav"
       },
       {
-        "name": "USER/PipTacToe/PlaceX.wav",
+        "name": "USER/PIPTACTOE/PlaceX.wav",
         "url": "piptactoe/assets/PlaceX.wav"
       },
       {
-        "name": "USER/PipTacToe/StartGame.wav",
+        "name": "USER/PIPTACTOE/StartGame.wav",
         "url": "piptactoe/assets/StartGame.wav"
       },
       {
-        "name": "USER/PipTacToe/StartPlay.wav",
+        "name": "USER/PIPTACTOE/StartPlay.wav",
         "url": "piptactoe/assets/StartPlay.wav"
       },
       {
-        "name": "USER/PipTacToe/Tied.wav",
+        "name": "USER/PIPTACTOE/Tied.wav",
         "url": "piptactoe/assets/Tied.wav"
       },
       {
-        "name": "USER/PipTacToe/Winner.wav",
+        "name": "USER/PIPTACTOE/Winner.wav",
         "url": "piptactoe/assets/Winner.wav"
       }
     ],
